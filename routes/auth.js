@@ -26,7 +26,7 @@ router.post("/signup", (req,res)=> {
                             transporter.sendMail({
                                 from: '"Food Finder" <info@foodfinder.com>', 
                                 to: user.email, 
-                                subject: 'Welcome to Food Finder! ✔', 
+                                subject: 'Welcome to Food Finder!', 
                                 text: 'Welcome to Food Finder',
                                 html: `<b>Hello, ${user.firstname}, thank you for signing up.</b>`
                             })
@@ -94,11 +94,11 @@ router.get("/send-reset", (req,res)=> {
 router.post("/send-reset", (req,res)=> {
     jwt.sign({email: req.body.email}, process.env.jwtSecret, { expiresIn: 60 * 60 }, function(err, token){
         transporter.sendMail({
-            from: '"Fred Foo 👻" <IronhackDemo2@gmail.com>', // sender address
-            to: req.body.email, // list of receivers
-            subject: 'Reset your password ✔', // Subject line
-            text: 'Hello world?', // plain text body
-            html: `<b>Password reset for crappy app: <a href="http://localhost:3000/auth/reset-password?token=${token}">Reset your password</a></b>` // html body
+            from: '"Food Finder" <info@foodfinder.com>', 
+            to: req.body.email, 
+            subject: 'Reset your password.', 
+            text: 'Reset your password.', 
+            html: `<b>Password reset for Food Finder: <a href="http://localhost:3000/auth/reset-password?token=${token}">Reset your password</a></b>` 
         })
         .then((result)=> {
             res.send("Email send")

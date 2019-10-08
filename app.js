@@ -52,8 +52,11 @@ const index = require('./routes/index')
 app.use('/', index)
 // app.use('/auth', require('./routes/auth/login'))
 
-const auth = require('./routes/authroutes.js');
+const auth = require('./routes/auth');
 app.use('/', auth);
+
+const profile = require('./routes/profile');
+app.use('/', profile);
 
 app.listen(3000, ()=>{console.log('App is listening on port 3000')});
 

@@ -6,7 +6,7 @@
         <input id="password" type="password" name="password" placeholder="password">
         <button id="login-submit" type="submit">Login</button>
         <p class="validCredentials">Invalid credentials</p>
-        <p class="serverError">OOOOeps, try again later</p>
+        <p class="serverError">Something went wrong, try again later.</p>
         <a href="/auth/send-reset">Forgot password?</a>
     </div>
 </div>
@@ -22,7 +22,6 @@
             validCredentials.style.display = "none"
         })
         loginSubmit.addEventListener("click", function() {
-            debugger
             axios({
                 method: "POST",
                 url: "{{{config.host}}}/auth/login",
