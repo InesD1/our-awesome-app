@@ -1,0 +1,48 @@
+<div class="form-container">
+    <form action="/auth/signup" method="POST" class="form">
+        <label for="username">Username</label>
+        <input type="text" required name="username" placeholder="username">
+        <label for="email">Email</label>
+        <input type="email" required id="email" name="email" placeholder="email">
+        <label for="firstname">Firstname</label>
+        <input type="text" required name="firstname" placeholder="firstname">
+        <label for="lastname">Lastname</label>
+        <input type="text" required name="lastname" placeholder="lastname">
+        <label for="password">
+            <span>Password</span>
+            <span class="constraints">* 8 characters, at least 1 number and 1 letter</span>
+        </label>
+        <input type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password" placeholder="password">
+        <button type="submit">Sign up</button>
+    </form>
+</div>
+
+<script>
+    window.onload = function() {
+        var email = document.getElementById("email");
+        var form = document.getElementsByClassName("form")[0];
+        debugger
+        email.addEventListener("input", function (event) {
+            debugger
+            axios({
+                method: "POST",
+                url: "{{{config.host}}}/auth/email-availability",
+                data: {
+                    email: email.value
+                }
+            })
+            .then((response)=> {
+                if(!response.data.available) {
+                    email.setCustomValidity("Email is unavailable");
+                    form.reportValidity()
+                } else {
+                    email.setCustomValidity("");
+                }
+            })
+            .catch((err)=>{
+                debugger
+                // handle error
+            })
+        });
+    }
+</script>

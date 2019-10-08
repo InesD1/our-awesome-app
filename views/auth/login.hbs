@@ -1,0 +1,46 @@
+<div class="form-container">
+    <div class="form" id="login-form">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" placeholder="username">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="password">
+        <button id="login-submit" type="submit">Login</button>
+        <p class="validCredentials">Invalid credentials</p>
+        <p class="serverError">OOOOeps, try again later</p>
+        <a href="/auth/send-reset">Forgot password?</a>
+    </div>
+</div>
+
+<script>
+    window.onload = function() {
+        var username = document.getElementById("username")
+        var password = document.getElementById("password")
+        var loginSubmit = document.getElementById("login-submit")
+        var validCredentials = document.getElementsByClassName("validCredentials")[0]
+        var serverError = document.getElementsByClassName("serverError")[0]
+        password.addEventListener("input", function() {
+            validCredentials.style.display = "none"
+        })
+        loginSubmit.addEventListener("click", function() {
+            debugger
+            axios({
+                method: "POST",
+                url: "{{{config.host}}}/auth/login",
+                data: {
+                    username: username.value,
+                    password: password.value
+                }
+            })
+            .then((response)=> {
+                serverError.style.display = "none"
+                if(response.data.loggedIn) location.href = "{{{config.host}}}/users/profile"
+                else { 
+                    validCredentials.style.display = "block"
+                }
+            })
+            .catch((error)=> {
+                serverError.style.display = "block"
+            })
+        })        
+    }
+</script>

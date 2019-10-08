@@ -1,12 +1,16 @@
-
+const createError = require('http-errors');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const express = require('express')
 const favicon = require('serve-favicon')
 const hbs = require('hbs')
 const mongoose = require('mongoose')
+const session = require("express-session");
 const logger = require('morgan')
 const path = require('path')
+
+require("dotenv").config();
+hbs.registerPartials(__dirname + '/views/partials');
 
 mongoose
   .connect('mongodb://localhost/awesome-project', { useNewUrlParser: true })
@@ -20,7 +24,7 @@ mongoose
 const appName = require('./package.json').name
 const debug = require('debug')(`${appName}:${path.basename(__filename).split('.')[0]}`)
 
-const app = express()
+const app = express();
 
 // Middleware Setup
 app.use(logger('dev'))
@@ -46,6 +50,12 @@ app.locals.title = 'Express - Generated with IronGenerator'
 
 const index = require('./routes/index')
 app.use('/', index)
-app.use('/auth', require('./routes/auth/login'))
+// app.use('/auth', require('./routes/auth/login'))
+
+const auth = require('./routes/authroutes.js');
+app.use('/', auth);
+
+app.listen(3000, ()=>{console.log('App is listening on port 3000')});
 
 module.exports = app
+
