@@ -1,6 +1,10 @@
 # our-awesome-app
-This is the starting tree of our awesome project 🌳
+This is our awesome project 🌳
 
-It comes from this package : https://www.npmjs.com/package/ironhack_generator.
+The structure comes from this npm package made by Ironhack : https://www.npmjs.com/package/ironhack_generator
 
-More directories and files will be added as we will build the app.
+Here you can have a look on our project's mockups : https://www.figma.com/file/txaIGyg9SGOfhkQ5LYFXFb/Untitled?node-id=0%3A1
+
+Cheeers, 
+
+Julieta & Ines
