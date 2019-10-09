@@ -1,13 +1,29 @@
+{{!-- <div class='img-login-container'>
+    <img class='img-login' src='images/logo.png'>
+</div> --}}
+
 <div class="form-container">
+
+    
+
     <div class="form" id="login-form">
-        <label for="username">Username</label>
-        <input id="username" type="text" name="username" placeholder="username">
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" placeholder="password">
-        <button id="login-submit" type="submit">Login</button>
-        <p class="validCredentials">Invalid credentials</p>
-        <p class="serverError">Something went wrong, try again later.</p>
-        <a href="/auth/send-reset">Forgot password?</a>
+
+        <img class='img-login' src='images/logo.png'> 
+
+        <h1 class='form-header'>Log in</h1>
+        
+        <input class='form-fields' id="username" type="text" name="username" placeholder="Username">
+        
+        <input class='form-fields' id="password" type="password" name="password" placeholder="Password">
+
+        <a class='form-forgot' href="/auth/send-reset">Forgot password?</a>
+
+        <div class='login-container'>
+            <button id="login-submit" type="submit">START</button>
+        </div>
+        {{!-- <p class="validCredentials">Invalid credentials</p>
+        <p class="serverError">Something went wrong, try again later.</p> --}}
+        
     </div>
 </div>
 

@@ -1,11 +1,5 @@
-/* body {
-    background-color: red;
-  } */
-
-  .profile-container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+body {
+    background-color: #efefef;
   }
   
   .profile-pic {
@@ -13,22 +7,20 @@
       max-height: 200px;
       display: block;
   }
-
-/*
+/*   
   .file-upload {
       display: none;
   } */
-
+  
   .circle {
       border-radius: 1000px !important;
       overflow: hidden;
       width: 128px;
       height: 128px;
-      border: 8px solid lightblue;
+      border: 8px solid rgba(255, 255, 255, 0.7);
       position: absolute;
       top: 72px;
   }
-
   img {
       max-width: 100%;
       height: auto;
@@ -50,4 +42,4 @@
   .upload-button:hover {
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
     color: #999;
-  } 
+  }
