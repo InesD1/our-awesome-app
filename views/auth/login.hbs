@@ -6,7 +6,9 @@
         
         <input class='form-fields' id="username" type="text" name="username" placeholder="Username">
         
-        <input class='form-fields' id="password" type="password" name="password" placeholder="Password">
+        <input class='form-fields' id="password" type="password" required name="password" placeholder="Password">
+
+        <div id='wrong-password'></div>
 
         <a class='form-forgot' href="/send-reset">Forgot password?</a>
 
@@ -17,7 +19,7 @@
         </div>
 
         <div class='login-container'>
-            <a id="login-submit" type="submit" href='/home'>START</a>
+            <input id="login-submit" value="START" type="submit">
         </div>
         {{!-- <p class="validCredentials">Invalid credentials</p>
         <p class="serverError">Something went wrong, try again later.</p> --}}

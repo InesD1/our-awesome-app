@@ -56,17 +56,19 @@ router.post("/login", (req,res)=> {
             else {
                 bcrypt.compare(req.body.password, user.password, function(err, equal) {
                     if(err) res.send(err);
-                    else if(!equal) res.json({loggedIn: false}); 
+                    else if(!equal) res.json({loggedIn: false});
+                    // else if(!equal){
+                    //     // res.send(document.getElementById("wrong-password").innerHTML = "Wrong password, try again.");
+                    // }
                     else {
                         req.session.user = user;
-                        res.redirect('/profile')
-                        res.json({loggedIn: true}); 
+                        res.redirect('/home')
                     }
                 });
             }
         })
         .catch(err=> {
-            res.send("error erropr", err);
+            res.send(err);
         })
 })
 
@@ -88,7 +90,7 @@ router.post("/email-availability", (req,res)=> {
 })
 
 router.get("/send-reset", (req,res)=> {
-    res.render("auth/send-reset")
+    res.render("/send-reset")
 })
 
 router.post("/send-reset", (req,res)=> {

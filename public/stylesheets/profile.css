@@ -1,45 +1,82 @@
-/* body {
-    background-color: #efefef;
-  } */
+
+
+.data-container1{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data-container2{
+  margin-top: 260px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* .profile-pic {
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+} */
+/* .file-upload {
+  display: none;
+}  */
+
+.circle {
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+  border: 8px solid rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 72px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  right: 110px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.profile-image {
+  position: absolute; 
+  top: 250px;
+  right: 30px;
+  color: #666666;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  margin-top: 230p;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+} 
+
+/*
+.profile-image:hover {
+transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.upload-button {
+font-size: 12px;
+}
+
+.upload-button:hover {
+transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+color: #999;
+} */
+
+
+
+ 
+   
   
-  .profile-pic {
-      max-width: 200px;
-      max-height: 200px;
-      display: block;
-  }
-/*   
-  .file-upload {
-      display: none;
-  } */
-  
-  .circle {
-      border-radius: 1000px !important;
-      overflow: hidden;
-      width: 128px;
-      height: 128px;
-      border: 8px solid rgba(255, 255, 255, 0.7);
-      position: absolute;
-      top: 72px;
-  }
-  img {
-      max-width: 100%;
-      height: auto;
-  }
-  .p-image {
-    position: absolute;
-    top: 167px;
-    right: 30px;
-    color: #666666;
-    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-  }
-  .p-image:hover {
-    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-  }
-  .upload-button {
-    font-size: 1.2em;
-  }
-  
-  .upload-button:hover {
-    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-    color: #999;
-  }
+ 
+   
