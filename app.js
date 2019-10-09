@@ -48,8 +48,8 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator'
 
-const home = require('./routes/home')
-app.use('/', home)
+// const home = require('./routes/home')
+// app.use('/', home)
 // app.use('/auth', require('./routes/auth/login'))
 
 const navbar = require('./routes/navbar')
@@ -58,8 +58,15 @@ app.use('/', navbar)
 const auth = require('./routes/auth');
 app.use('/', auth);
 
+const signup = require('./routes/auth');
+app.use('/', signup);
+
 const profile = require('./routes/profile');
 app.use('/', profile);
+
+const home = require('./routes/home');
+app.use('/', home);
+
 
 app.listen(3000, ()=>{console.log('App is listening on port 3000')});
 

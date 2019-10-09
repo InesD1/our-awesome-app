@@ -35,9 +35,9 @@ body {
     text-align: center;
 }
 
-.checkbox {
+/* .checkbox {
 	  font-weight: normal;
-}
+} */
 
 .form-fields {
       border: 2px grey;
@@ -79,6 +79,8 @@ input[type="password"] {
 }
 
 #login-submit{
+    margin-top: 15px;
     color: white;
     font-size: 20px;   
+    text-decoration: none;
 }

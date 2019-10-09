@@ -4,8 +4,6 @@
 
 <div class="form-container">
 
-    
-
     <div class="form" id="login-form">
 
         <img class='img-login' src='images/logo.png'> 
@@ -16,10 +14,13 @@
         
         <input class='form-fields' id="password" type="password" name="password" placeholder="Password">
 
-        <a class='form-forgot' href="/auth/send-reset">Forgot password?</a>
+        <a class='form-forgot' href="/send-reset">Forgot password?</a>
+
+        <h3>Don't have an Account?</h3>
+        <a class='form-forgot' href="/signup">Sign Up</a>
 
         <div class='login-container'>
-            <button id="login-submit" type="submit">START</button>
+            <a id="login-submit" type="submit" href='/home'>START</a>
         </div>
         {{!-- <p class="validCredentials">Invalid credentials</p>
         <p class="serverError">Something went wrong, try again later.</p> --}}

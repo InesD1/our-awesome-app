@@ -1,29 +1,36 @@
 <div class="form-container">
+    <h1 class='create-header'>Create an Account</h1>
     <form action="/auth/signup" method="POST" class="form">
+
         <label for="username">Username</label>
-        <input type="text" required name="username" placeholder="username">
+        <input class='form-field-signup' type="text" required name="username">
+
         <label for="email">Email</label>
-        <input type="email" required id="email" name="email" placeholder="email">
-        <label for="firstname">Firstname</label>
-        <input type="text" required name="firstname" placeholder="firstname">
-        <label for="lastname">Lastname</label>
-        <input type="text" required name="lastname" placeholder="lastname">
+        <input class='form-field-signup' type="text" required name="username">
+
+        <label for="firstname">First Name</label>
+        <input class='form-field-signup' type="text" required name="firstname">
+
+        <label for="lastname">Last Name</label>
+        <input class='form-field-signup' type="text" required name="lastname">
+
         <label for="password">
             <span>Password</span>
             <span class="constraints">* 8 characters, at least 1 number and 1 letter</span>
         </label>
-        <input type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password" placeholder="password">
-        <button type="submit">Sign up</button>
+        <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
+
+        <div class='signup-btn-container'>
+            <button class='signup-btn' type="submit" href='/home'>Sign up</button>
+        </div>
     </form>
 </div>
 
 <script>
     window.onload = function() {
         var email = document.getElementById("email");
-        var form = document.getElementsByClassName("form")[0];
-        debugger
-        email.addEventListener("input", function (event) {
-            debugger
+        var form = document.getElementsByClassName("form")[0];      
+        email.addEventListener("input", function (event) {           
             axios({
                 method: "POST",
                 url: "{{{config.host}}}/auth/email-availability",
