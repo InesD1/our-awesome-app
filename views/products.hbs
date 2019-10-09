@@ -1,0 +1,11 @@
+<h1>Product List</h1>
+
+<div>
+    {{#each products}}
+        <h3>{{this.product_name}}</h3>
+        <h4>{{this.brands}}</h4>
+        <p><a class="button" href="/wishlist/{{this._id}}"></a></p>
+    {{/each}}
+
+        <p><a class="button" href="/movie/create">Add a movie</a></p>
+</div>
