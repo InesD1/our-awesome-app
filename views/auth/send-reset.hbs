@@ -1,7 +1,13 @@
-<div class="form-container">
-    <form action="{{{config.host}}}/auth/send-reset" class="form" method="POST">
-        <label for="email">Email</label>
-        <input type="text" name="email" placeholder="email address">
-        <button type="submit">Send reset link</button>
-    </form>
-</div>
+<form class="send-form-container" action="{{{config.host}}}/auth/send-reset" class="form" method="POST">
+
+        <h1 class='send-text'>Forgot your password?</h1>
+        <h2 class='send-text'>No worries!</h2>
+        <h3 class='send-text'>Enter the email account you used to Sign Up and we will send you instructions to reset your password.</h3>
+        
+        <input class='form-field-signup' type="text" name="email" placeholder="email address">
+
+        <div class='green-btn-container'>
+            <button class='green-btn' type="submit">Send reset link</button>
+        </div>
+
+</form>

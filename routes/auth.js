@@ -22,7 +22,6 @@ router.post("/signup", (req,res)=> {
                             lastname: req.body.lastname
                         })
                         .then((user)=> {
-
                             transporter.sendMail({
                                 from: '"Food Finder" <info@foodfinder.com>', 
                                 to: user.email, 
@@ -31,10 +30,10 @@ router.post("/signup", (req,res)=> {
                                 html: `<b>Hello, ${user.firstname}, thank you for signing up.</b>`
                             })
                             .then((info)=> {
-                                res.redirect("/auth/login")
+                                res.redirect("/login")
                             })
                             .catch((error)=> {
-                                res.send("ERROR")
+                                res.send(error)
                             })
                         })
                         .catch((err)=> {
@@ -60,6 +59,7 @@ router.post("/login", (req,res)=> {
                     else if(!equal) res.json({loggedIn: false}); 
                     else {
                         req.session.user = user;
+                        res.redirect('/profile')
                         res.json({loggedIn: true}); 
                     }
                 });

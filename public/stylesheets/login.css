@@ -1,43 +1,44 @@
+/* IN THIS STYLESHEET WE HAVE THE STYLE FOR:
+- LOG IN
+- SIGN UP 
+- RESET PASSWORD */
+
+/* -----  LOG IN -------------------------------------------- */
+
 body {
 	background: white !important;	
 }
 
-/* .img-login-container{
-    display: flex;
-    justify-content: center;
-    background-color: aqua;
-    max-width: 380px;
-} */
-
-.img-login{
-    /* margin-top: 40px;
-    margin-left: 80px;  */
-    width: 200px;
-    height: 200px;
-}
-
-.form {
-  max-width: 380px;
+.form-container {
   padding: 15px 35px 45px;
   margin: 0 auto;
-  background-color: #fff;
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  align-items: center;
 } 
 
-.form-header,
-    .checkbox {
-	margin-bottom: 30px;
+.img-login{
+    width: 200px;
+    height: 200px;
+    position: relative;
 }
 
 .form-header{
     font-size: 40px;
     text-align: center;
+    margin-bottom: 30px;
+    max-width: 50%;
 }
 
-/* .checkbox {
-	  font-weight: normal;
-} */
+.text-account, 
+.form-forgot{
+    text-align: center;
+}
+
+.text-account{
+    font-size: 26px;
+}
 
 .form-fields {
       border: 2px grey;
@@ -48,6 +49,10 @@ body {
       box-shadow: 5px 5px 5px 5px #EBEBEB;
 	  padding: 10px;
 }
+
+/* input[type="text"]:hover{
+    box-shadow: 3px red;
+} */
 
 input[type="text"] {
       margin-bottom: 30px;
@@ -65,7 +70,8 @@ input[type="password"] {
 
 .form-forgot{
     text-align: center;
-    font-size: 18px;
+    font-size: 26px;
+    margin-top: 25px;
 }
 
 .login-container{
@@ -81,6 +87,61 @@ input[type="password"] {
 #login-submit{
     margin-top: 15px;
     color: white;
-    font-size: 20px;   
+    font-size: 24px;   
     text-decoration: none;
+}
+
+/* -----  SIGN UP -------------------------------------------- */
+
+.form-container-signin,
+.reset-form-container,
+.send-form-container{
+    margin: 0 auto;
+    border: none;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+  } 
+
+.create-header{
+    margin-top: 60px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.form-field-signup{
+    border: 2px grey;
+    position: relative;
+    width: 70vw;
+    height: 4vh;
+    padding: 10px;
+}
+
+.green-btn-container{
+    background-color: #73D3C8;
+    border-radius: 4px;
+    width: 75vw;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.green-btn{
+    color: white;
+    font-size: 20px;   
+}
+
+.name-signup{
+    font-size: 16px;
+    color: #73D3C8;
+}
+
+/* -----  RESET PASSWORD -------------------------------------------- */
+
+.password-text,
+.send-text{
+    text-align: center;
+    margin-bottom: 30px;
 }

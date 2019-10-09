@@ -1,10 +1,4 @@
-{{!-- <div class='img-login-container'>
-    <img class='img-login' src='images/logo.png'>
-</div> --}}
-
-<div class="form-container">
-
-    <div class="form" id="login-form">
+    <form class="form-container" action="/login" method="POST">
 
         <img class='img-login' src='images/logo.png'> 
 
@@ -16,17 +10,18 @@
 
         <a class='form-forgot' href="/send-reset">Forgot password?</a>
 
-        <h3>Don't have an Account?</h3>
-        <a class='form-forgot' href="/signup">Sign Up</a>
+        <h3 class='text-account'>Don't have an Account?</h3>
+
+        <div class='text-account'>
+            <a class='form-forgot' href="/signup">Sign Up</a>
+        </div>
 
         <div class='login-container'>
             <a id="login-submit" type="submit" href='/home'>START</a>
         </div>
         {{!-- <p class="validCredentials">Invalid credentials</p>
         <p class="serverError">Something went wrong, try again later.</p> --}}
-        
-    </div>
-</div>
+    </form>  
 
 <script>
     window.onload = function() {

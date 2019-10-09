@@ -1,30 +1,32 @@
-<div class="form-container">
+ <form class="form-container-signin" action="/signup" method="POST" class="form">
+
     <h1 class='create-header'>Create an Account</h1>
-    <form action="/auth/signup" method="POST" class="form">
 
-        <label for="username">Username</label>
-        <input class='form-field-signup' type="text" required name="username">
+    <label class='name-signup' for="username">Username</label>
+    <input class='form-field-signup' type="text" required name="username">
 
-        <label for="email">Email</label>
-        <input class='form-field-signup' type="text" required name="username">
+    <label class='name-signup' for="email">Email</label>
+    <input class='form-field-signup' type="text" required name="email">
 
-        <label for="firstname">First Name</label>
-        <input class='form-field-signup' type="text" required name="firstname">
+    <label class='name-signup' for="firstname">First Name</label>
+    <input class='form-field-signup' type="text" required name="firstname">
 
-        <label for="lastname">Last Name</label>
-        <input class='form-field-signup' type="text" required name="lastname">
+    <label class='name-signup' for="lastname">Last Name</label> 
+    <input class='form-field-signup' type="text" required name="lastname">
 
-        <label for="password">
-            <span>Password</span>
-            <span class="constraints">* 8 characters, at least 1 number and 1 letter</span>
-        </label>
-        <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
+    <label for="password">
+        <span>Password</span>
+        <span class="constraints">* 8 characters, at least 1 number and 1 letter</span>
+    </label>
 
-        <div class='signup-btn-container'>
-            <button class='signup-btn' type="submit" href='/home'>Sign up</button>
-        </div>
-    </form>
-</div>
+    <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
+
+    <div class='green-btn-container'>
+        <button class='green-btn' type="submit">Sign up</button>
+    </div>
+
+</form>
+
 
 <script>
     window.onload = function() {
