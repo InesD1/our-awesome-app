@@ -28,7 +28,7 @@ body {
     font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
-    max-width: 50%;
+    max-width: 70%;
 }
 
 .text-account, 
@@ -37,7 +37,8 @@ body {
 }
 
 .text-account{
-    font-size: 26px;
+    font-size: 24px;
+    margin-bottom: -2px;
 }
 
 .form-fields {
@@ -70,7 +71,7 @@ input[type="password"] {
 
 .form-forgot{
     text-align: center;
-    font-size: 26px;
+    font-size: 22px;
     margin-top: 25px;
 }
 
@@ -90,6 +91,7 @@ input[type="password"] {
     font-size: 24px;   
     text-decoration: none;
 }
+
 
 /* -----  SIGN UP -------------------------------------------- */
 
@@ -125,7 +127,11 @@ input[type="password"] {
     height: 7vh;
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    
+}
+
+.green-send{
+    margin-top: -10px;
 }
 
 .green-btn{
@@ -136,6 +142,12 @@ input[type="password"] {
 .name-signup{
     font-size: 16px;
     color: #73D3C8;
+    margin-right: 300px;
+}
+
+.password-requirements{
+    font-size: 16px;
+    margin-right: 100px;
 }
 
 /* -----  RESET PASSWORD -------------------------------------------- */
@@ -145,3 +157,4 @@ input[type="password"] {
     text-align: center;
     margin-bottom: 30px;
 }
+

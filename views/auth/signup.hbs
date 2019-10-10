@@ -6,28 +6,27 @@
 
     <h1 class='create-header'>Create an Account</h1>
 
-    <label class='name-signup' for="username">Username</label>
+    <label class='name-signup' for="username">💚 Username</label>
     <input class='form-field-signup' type="text" required name="username">
 
-    <label class='name-signup' for="email">Email</label>
+    <label class='name-signup' for="email">💚 Your Email</label>
     <input class='form-field-signup' type="text" required name="email">
 
-    <label class='name-signup' for="firstname">First Name</label>
+    <label class='name-signup' for="firstname">💚 First Name</label>
     <input class='form-field-signup' type="text" required name="firstname">
 
-    <label class='name-signup' for="lastname">Last Name</label> 
+    <label class='name-signup' for="lastname">💚 Last Name</label> 
     <input class='form-field-signup' type="text" required name="lastname">
 
     <label for="password">
-        <span>Password</span>
-        <span class="constraints">* 8 characters, at least 1 number and 1 letter</span>
+        <span class='name-signup'>💚 Password</span> 
     </label>
+    <span class="password-requirements">* 8 characters, at least 1 number and 1 letter</span>
 
     <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
+    
 
-    <div class='green-btn-container'>
-        <button class='green-btn' type="submit">Sign up</button>
-    </div>
+    <button class='green-btn-container green-btn' type="submit">Sign Up</button>
 
 </form>
 

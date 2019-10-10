@@ -9,7 +9,7 @@ var jwt = require('jsonwebtoken');
 router.post("/signup", (req,res)=> {
     User.findOne({$or: [{username: req.body.username, email: req.body.email}]})
         .then((user)=> {
-            if(user) res.send("User with this email or username already exists")
+            if(user) res.send("User with this email or username already exists.")
             else {
                 bcrypt.hash(req.body.password, 10, function(err, hash) {
                     if(err) res.send(err.message)
@@ -23,11 +23,11 @@ router.post("/signup", (req,res)=> {
                         })
                         .then((user)=> {
                             transporter.sendMail({
-                                from: '"Food Finder" <info@foodfinder.com>', 
+                                from: '"Foodie" <info@foodfinder.com>', 
                                 to: user.email, 
-                                subject: 'Welcome to Food Finder!', 
-                                text: 'Welcome to Food Finder',
-                                html: `<b>Hello, ${user.firstname}, thank you for signing up.</b>`
+                                subject: 'Welcome to Foodie! 🌱', 
+                                text: 'Welcome to Foodie! 🌱',
+                                html: `<b>Hello, ${user.firstname}, thank you for signing up! 😀.</b>`
                             })
                             .then((info)=> {
                                 res.redirect("/login")
@@ -52,14 +52,13 @@ router.get("/signup", (req,res)=> {
 router.post("/login", (req,res)=> {
     User.findOne({username: req.body.username})
         .then((user)=> {
+            console.log(user)
             if(!user) res.json({loggedIn: false}) 
             else {
                 bcrypt.compare(req.body.password, user.password, function(err, equal) {
-                    if(err) res.send(err);
-                    else if(!equal) res.json({loggedIn: false});
-                    // else if(!equal){
-                    //     // res.send(document.getElementById("wrong-password").innerHTML = "Wrong password, try again.");
-                    // }
+                    console.log(equal)
+                    if(err) {res.send(err);}
+                    else if(!equal){res.json({loggedIn: false});} 
                     else {
                         req.session.user = user;
                         res.redirect('/home')
@@ -90,23 +89,24 @@ router.post("/email-availability", (req,res)=> {
 })
 
 router.get("/send-reset", (req,res)=> {
-    res.render("/send-reset")
+    res.render("auth/send-reset")
 })
 
 router.post("/send-reset", (req,res)=> {
     jwt.sign({email: req.body.email}, process.env.jwtSecret, { expiresIn: 60 * 60 }, function(err, token){
         transporter.sendMail({
-            from: '"Food Finder" <info@foodfinder.com>', 
+            from: '"Foodie" <info@foodie.com>', 
             to: req.body.email, 
-            subject: 'Reset your password.', 
-            text: 'Reset your password.', 
-            html: `<b>Password reset for Food Finder: <a href="http://localhost:3000/auth/reset-password?token=${token}">Reset your password</a></b>` 
+            subject: 'Reset your password 😀', 
+            text: 'Reset your password 😀.', 
+            html: `<b>Password reset for Foodie: <a href="http://localhost:3000/auth/reset-password?token=${token}">Reset your password</a></b>` 
         })
         .then((result)=> {
-            res.send("Email send")
+            console.log(result)
+            res.send("Check your inbox to reset your password 😊")
         })
         .catch((err)=> {
-            res.next(createError(400))
+            res.send(err)
         })
     })
 })
