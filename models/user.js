@@ -9,6 +9,7 @@ const User = mongoose.model("user", {
       required: [true, "Please, provide a valid email address"],
       match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
   },
+  wishlist: [{type: mongoose.Types.ObjectId, ref: "cleanedUpFoods"}], 
 })
 
 module.exports = User;

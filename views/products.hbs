@@ -1,11 +1,28 @@
+{{#extend "stylesheets"}}
+<link rel="stylesheet" href="/stylesheets/product-list.css" />
+{{/extend}}
+    
 <h1>Product List</h1>
-
-<div>
+<div class="product-list">
     {{#each products}}
-        <h3>{{this.product_name}}</h3>
-        <h4>{{this.brands}}</h4>
-        <p><a class="button" href="/wishlist/{{this._id}}"></a></p>
-    {{/each}}
+        <div class="product-list-element">
+            <a href="/product/{{this.product_name}}" ><h3 class="capitalized">{{this.product_name}}</h3></a>
+            <h4 class="capitalized">Brand: {{this.brands}}</h4>
+            <a class="add-wishlist" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
 
-        <p><a class="button" href="/movie/create">Add a movie</a></p>
+            {{#ifCond this.nutrition_grades_tags}}
+                <h4>🤷‍♂️</h4>
+            {{else}}
+                <img src="/images/nutriscore-{{this.nutrition_grades_tags}}.png">
+            {{/ifCond}}
+
+        </div>
+    {{/each}}
 </div>
+
+{{!-- <script>
+    var currentPicture = JSON.parse('{{{imageStringBuilder}}}');
+</script> --}}
+
+{{!-- Be able to show the correct image depending on the nutriscore  --}}
+

@@ -1,21 +1,14 @@
 <p><a class="button" href="/products">Go back</a></p>
 
-<h2>{{product.product_name}}</h2>
-<h3>Brand: {{product.brands}}</h3>
-<h4>Country of origin: {{product.countries}}</h4>
-<h4>Stores: {{product.stores}}</h4>
-
- {{#if product.nutrient_levels}}
-        <h4>Nutrients</h4>
-        <ul class="nutrients_list">
-            {{#each product.nutrient_levels}}
-                <li>{{this}}</li>
-            {{/each}}
-        </ul>
-    {{/if}}
-
-<h4>Nutrition grades: {{product.nutrition_grades_tags}}</h4>
-
-<a class="button" href="/product/delete/{{product.id}}">Delete product</a>
-<p><a class="button" href="/product/create">Add product</a></p>
-<p><a class="button" href="/product/edit">Edit movie</a></p>
+<div>
+    <h2 class="capitalized">{{product.product_name}}</h2>
+    <h4 class="capitalized">Brand: {{product.brands}}</h4>
+    <h4>Stores: {{product.stores}}</h4>
+    <h4>Nutrients: </h4>
+        <ul><li>Salt: {{product.nutrient_levels.salt}}</li></ul>
+        <ul><li>Sugars: {{product.nutrient_levels.sugars}}</li></ul>
+        <ul><li>Fat: {{product.nutrient_levels.fat}}</li></ul>
+        <ul><li>Saturated Fat: {{product.nutrient_levels.saturated-fat}}</li></ul>
+    <button class="add-favorite" type="button">❤️</button>
+    <p><a class="button" href="/product/edit">Edit product</a></p>
+</div>

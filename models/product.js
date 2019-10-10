@@ -22,7 +22,6 @@ var productSchema = new mongoose.Schema(
     }
 )
 productSchema.index({ countries: 1})
-const Product = mongoose.model("product", productSchema)
-
+const Product = mongoose.model("product", productSchema, 'cleanedUpFoods')
 
 module.exports = Product
