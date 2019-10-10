@@ -22,7 +22,12 @@ body {
     width: 200px;
     height: 200px;
     position: relative;
+<<<<<<< HEAD
     border-radius: 15px;
+=======
+    border-radius: 30px;
+    border: none; 
+>>>>>>> 2160004c4375a20ddf5a71766e928dc088866f82
 }
 
 .form-header{
@@ -44,6 +49,7 @@ body {
 
 .form-fields {
       border: 2px grey;
+      border-radius: 4px;
 	  position: relative;
       font-size: 16px;
       width: 70vw;
@@ -119,6 +125,7 @@ input[type="password"] {
 }
 
 .form-field-signup{
+    border-radius: 4px;
     border: 2px grey;
     position: relative;
     width: 70vw;
@@ -132,7 +139,8 @@ input[type="password"] {
     width: 73vw;
     height: 7vh;
     display: flex;
-    justify-content: center;  
+    justify-content: center;
+    border: none;
 }
 
 .green-start{

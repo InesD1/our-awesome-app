@@ -72,9 +72,9 @@ router.post("/login", (req,res)=> {
 })
 
 router.get("/login", (req,res)=> {
-    res.render("auth/login");
+    res.render("auth/login", {connectedUser:true});
 })
-
+  
 router.get("/logout", (req, res)=> {
     req.session.destroy();
     res.redirect("/");

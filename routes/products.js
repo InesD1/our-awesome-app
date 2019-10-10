@@ -15,7 +15,7 @@ router.get("/products", (req, res, next)=> {
         brands: {$ne:null},
         _id: {$ne:null},
     })
-    .limit(50)
+    .limit(100)
     .select({brands:1, stores:1, product_name:1,nutrient_levels:1, nutrition_grades_tags:1, countries:1, code:1, images:1, _id:1})
         .then((products)=> {
           console.log(products)
