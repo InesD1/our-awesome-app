@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const express = require('express')
@@ -11,6 +10,9 @@ const path = require('path')
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const createError = require('http-errors');
+
+require("dotenv").config();
+hbs.registerPartials(__dirname + '/views/partials');
 
 mongoose
   .connect('mongodb://localhost/openFoodFact', { useNewUrlParser: true })
@@ -24,7 +26,7 @@ mongoose
 const appName = require('./package.json').name
 const debug = require('debug')(`${appName}:${path.basename(__filename).split('.')[0]}`)
 
-const app = express()
+const app = express();
 
 // Middleware Setup
 app.use(session({
@@ -38,10 +40,17 @@ app.use(session({
   })
 }));
 
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+// Express View engine setup
+app.use(require('node-sass-middleware')({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  sourceMap: true
+}))
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
@@ -82,15 +91,20 @@ hbs.registerHelper('ifCond', function(v1, options) {
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator'
 
-const index = require('./routes/index')
-app.use('/', index)
-app.use('/auth', require('./routes/auth/login'))
+const home = require('./routes/home')
+app.use('/', home)
 app.use('/', require('./routes/products'))
 app.use('/', require('./routes/add-wishlist'))
 
+const auth = require('./routes/auth');
+app.use('/', auth);
 
-app.listen(3000, ()=>{console.log(`App is listening on port 3000`)});
+const signup = require('./routes/auth');
+app.use('/', signup);
+
+const profile = require('./routes/profile');
+app.use('/', profile);
+
+app.listen(3000, ()=>{console.log('App is listening on port 3000')});
 
 module.exports = app
-
-

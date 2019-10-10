@@ -1,0 +1,63 @@
+{{#extend "stylesheets"}}
+    <link rel="stylesheet" href="/stylesheets/login.css">
+{{/extend}}
+
+    <form class="form-container" action="/login" method="POST">
+
+        <img class='img-login' src='images/logo.png'> 
+
+        <h1 class='form-header'>Log in</h1>
+        
+        <input class='form-fields' id="username" type="text" name="username" placeholder="Username">
+        
+        <input class='form-fields' id="password" type="password" required name="password" placeholder="Password">
+
+        <div id='wrong-password'></div>
+
+        <a class='form-forgot' href="/send-reset">Forgot password?</a>
+
+        <h3 class='text-account'>Don't have an Account?</h3>
+
+        <div class='text-account'>
+            <a class='form-forgot' href="/signup">Sign Up</a>
+        </div>
+
+        <div class='login-container'>
+            <input id="login-submit" value="START" type="submit">
+        </div>
+        {{!-- <p class="validCredentials">Invalid credentials</p>
+        <p class="serverError">Something went wrong, try again later.</p> --}}
+    </form>  
+
+<script>
+    window.onload = function() {
+        var username = document.getElementById("username")
+        var password = document.getElementById("password")
+        var loginSubmit = document.getElementById("login-submit")
+        var validCredentials = document.getElementsByClassName("validCredentials")[0]
+        var serverError = document.getElementsByClassName("serverError")[0]
+        password.addEventListener("input", function() {
+            validCredentials.style.display = "none"
+        })
+        loginSubmit.addEventListener("click", function() {
+            axios({
+                method: "POST",
+                url: "{{{config.host}}}/auth/login",
+                data: {
+                    username: username.value,
+                    password: password.value
+                }
+            })
+            .then((response)=> {
+                serverError.style.display = "none"
+                if(response.data.loggedIn) location.href = "{{{config.host}}}/users/profile"
+                else { 
+                    validCredentials.style.display = "block"
+                }
+            })
+            .catch((error)=> {
+                serverError.style.display = "block"
+            })
+        })        
+    }
+</script>

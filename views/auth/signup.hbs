@@ -1,0 +1,60 @@
+ {{#extend "stylesheets"}}
+    <link rel="stylesheet" href="/stylesheets/login.css">
+{{/extend}}
+
+ <form class="form-container-signin" action="/signup" method="POST" class="form">
+
+    <h1 class='create-header'>Create an Account</h1>
+
+    <label class='name-signup' for="username">Username</label>
+    <input class='form-field-signup' type="text" required name="username">
+
+    <label class='name-signup' for="email">Email</label>
+    <input class='form-field-signup' type="text" required name="email">
+
+    <label class='name-signup' for="firstname">First Name</label>
+    <input class='form-field-signup' type="text" required name="firstname">
+
+    <label class='name-signup' for="lastname">Last Name</label> 
+    <input class='form-field-signup' type="text" required name="lastname">
+
+    <label for="password">
+        <span>Password</span>
+        <span class="constraints">* 8 characters, at least 1 number and 1 letter</span>
+    </label>
+
+    <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
+
+    <div class='green-btn-container'>
+        <button class='green-btn' type="submit">Sign up</button>
+    </div>
+
+</form>
+
+
+<script>
+    window.onload = function() {
+        var email = document.getElementById("email");
+        var form = document.getElementsByClassName("form")[0];      
+        email.addEventListener("input", function (event) {           
+            axios({
+                method: "POST",
+                url: "{{{config.host}}}/auth/email-availability",
+                data: {
+                    email: email.value
+                }
+            })
+            .then((response)=> {
+                if(!response.data.available) {
+                    email.setCustomValidity("Email is unavailable");
+                    form.reportValidity()
+                } else {
+                    email.setCustomValidity("");
+                }
+            })
+            .catch((err)=>{
+                serverError.style.display = "block"
+            })
+        });
+    }
+</script>
