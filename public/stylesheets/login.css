@@ -11,7 +11,7 @@ body {
 
 .form-container {
   padding: 15px 35px 45px;
-  margin: 0 auto;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -22,6 +22,7 @@ body {
     width: 200px;
     height: 200px;
     position: relative;
+    border-radius: 15px;
 }
 
 .form-header{
@@ -47,8 +48,9 @@ body {
       font-size: 16px;
       width: 70vw;
       height: 4vh;
-      box-shadow: 5px 5px 5px 5px #EBEBEB;
-	  padding: 10px;
+      box-shadow: 5px 5px 35px 10px #EBEBEB;
+      padding: 10px;
+      
 }
 
 /* input[type="text"]:hover{
@@ -71,12 +73,11 @@ input[type="password"] {
 
 .form-forgot{
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 25px;
 }
 
 .login-container{
-    background-color: #73D3C8;
     border-radius: 4px;
     width: 73vw;
     height: 7vh;
@@ -106,10 +107,15 @@ input[type="password"] {
     align-items: center;
   } 
 
+.send-form-container{
+    height: 90vh;
+}
+
 .create-header{
-    margin-top: 60px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     text-align: center;
+    font-size: 25px;
 }
 
 .form-field-signup{
@@ -123,15 +129,14 @@ input[type="password"] {
 .green-btn-container{
     background-color: #73D3C8;
     border-radius: 4px;
-    width: 75vw;
+    width: 73vw;
     height: 7vh;
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;  
 }
 
-.green-send{
-    margin-top: -10px;
+.green-start{
+    margin-top: 40px;
 }
 
 .green-btn{
@@ -142,12 +147,17 @@ input[type="password"] {
 .name-signup{
     font-size: 16px;
     color: #73D3C8;
-    margin-right: 300px;
+    text-align: left;
+    width: 70vw;
 }
 
 .password-requirements{
+    text-align: left;
+    width: 100vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 16px;
-    margin-right: 100px;
+    width: 70vw;
 }
 
 /* -----  RESET PASSWORD -------------------------------------------- */
@@ -155,6 +165,26 @@ input[type="password"] {
 .password-text,
 .send-text{
     text-align: center;
-    margin-bottom: 30px;
+}
+
+.send-text{
+    width: 90vw;
+}
+
+.send-title{
+    font-size: 28px;
+}
+
+.send-worries{
+    font-size: 26px;
+}
+
+.send-p{
+    font-size: 16px;
+    text-align: center
+}
+
+.img-send{
+    margin-top: 40px;
 }
 
