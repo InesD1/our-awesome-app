@@ -1,14 +1,19 @@
+{{#extend "stylesheets"}}
+<link rel="stylesheet" href="/stylesheets/product-details.css" />
+{{/extend}}
+    
 <p><a class="button" href="/products">Go back</a></p>
 
 <div>
     <h2 class="capitalized">{{product.product_name}}</h2>
+    <a class="add-favorite" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
     <h4 class="capitalized">Brand: {{product.brands}}</h4>
-    <h4>Stores: {{product.stores}}</h4>
+    <h4 class="capitalized">Stores: {{product.stores}}</h4>
     <h4>Nutrients: </h4>
         <ul><li>Salt: {{product.nutrient_levels.salt}}</li></ul>
         <ul><li>Sugars: {{product.nutrient_levels.sugars}}</li></ul>
         <ul><li>Fat: {{product.nutrient_levels.fat}}</li></ul>
         <ul><li>Saturated Fat: {{product.nutrient_levels.saturated-fat}}</li></ul>
-    <button class="add-favorite" type="button">❤️</button>
-    <p><a class="button" href="/product/edit">Edit product</a></p>
+    <img src="{{image_url}}">
+    <p><a class="button" href="/product/edit/{{this._id}}">Edit product</a></p>
 </div>
