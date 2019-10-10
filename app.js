@@ -99,9 +99,6 @@ app.use('/', require('./routes/add-wishlist'))
 const auth = require('./routes/auth');
 app.use('/', auth);
 
-const signup = require('./routes/auth');
-app.use('/', signup);
-
 const profile = require('./routes/profile');
 app.use('/', profile);
 
