@@ -22,12 +22,8 @@ body {
     width: 200px;
     height: 200px;
     position: relative;
-<<<<<<< HEAD
-    border-radius: 15px;
-=======
     border-radius: 30px;
     border: none; 
->>>>>>> 2160004c4375a20ddf5a71766e928dc088866f82
 }
 
 .form-header{
