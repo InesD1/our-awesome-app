@@ -4,7 +4,7 @@
 
  <form class="form-container-signin" action="/signup" method="POST" class="form">
 
-    <h1 class='create-header'>Create an Account</h1>
+    <h1 class='create-header'>CREATE AN ACCOUNT</h1>
 
     <label class='name-signup' for="username">💚 Username</label>
     <input class='form-field-signup' type="text" required name="username">
@@ -18,13 +18,12 @@
     <label class='name-signup' for="lastname">💚 Last Name</label> 
     <input class='form-field-signup' type="text" required name="lastname">
 
-    <label for="password">
-        <span class='name-signup'>💚 Password</span> 
-    </label>
+    <label for="password" class='name-signup'>💚 Password</label>
     <span class="password-requirements">* 8 characters, at least 1 number and 1 letter</span>
 
     <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
     
+
     <div class="pure-controls">
             <label for="cb" class="pure-checkbox">
                 <input id="cb" type="checkbox"><a href="#">I've read the terms and conditions</a>

@@ -1,28 +1,38 @@
 {{#extend "stylesheets"}}
   <link rel="stylesheet" href="/stylesheets/home.css"/>
+  
 {{/extend}}
 
-<div id="title-div">
-  <h1>Hello World</h1>
+
+<div class='titles-container'>
+  <h1 class='titles'>FOODIE</h1>
+  <h2 class='title-look'>What are you looking for?</h2>
+
+<form id="content">
+  <input type="text" name="input" class="input" id="search-input">
+  <button type="reset" class="search" id="search-btn"></button>
+</form>
+
+<button class='green-btn-container green-btn green-send' type="submit">SEARCH</button>
+
+<img class='img-login' src='images/logo.png'> 
+
 </div>
 
-<div style="overflow:auto">
-  <div class="menu">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-    <a href="#">Link 4</a>
-  </div>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
 
-  <div class="main">
-    <h2>Lorum Ipsum</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  </div>
+const input = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
 
-  <div class="right">
-    <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-  </div>
-</div>
+const expand = () => {
+  searchBtn.classList.toggle("close");
+  input.classList.toggle("square");
+};
 
-<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
+searchBtn.addEventListener("click", expand);
+
+</script>
