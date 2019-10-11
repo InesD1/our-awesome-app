@@ -1,13 +1,16 @@
-<p><a class="button" href="/products">Go back</a></p>
+{{#extend "stylesheets"}}
+<link rel="stylesheet" href="/stylesheets/edit-form.css" />
+{{/extend}}
 
+<p>{{product.brands}}</p>
 <div class="edit-product-container">
-    <form action="/product/edit" method="POST" enctype="multipart/form-data">
+    <form action="/product/edit/{{product.product_name}}" method="POST" enctype="multipart/form-data">
         <input class="form" type="text" name="nutrient_levels.salt" placeholder="Salt level">
         <input class="form" type="text" name="nutrient_levels.sugars" placeholder="Sugar level">
         <input class="form" type="text" name="nutrient_levels.fat" placeholder="Fat level">
         <input class="form" type="text" name="nutrient_levels.saturatedfat" placeholder="Saturated fat level">
-        {{!-- <input class="form-upload" type="file" name="profile-picture"> --}}
         <input class="form" type="text" name="nutrition_grades_tags" placeholder="Nutrition grade">
-        <a class="button" type="submit">Add</a>
+        <button class="button" type="submit">Submit</button>
+        <p><a class="button2" href="/products">Go back</a></p>
     </form>
 </div>

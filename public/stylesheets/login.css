@@ -154,6 +154,12 @@ input[type="password"] {
     margin-right: 100px;
 }
 
+.pure-controls {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /* -----  RESET PASSWORD -------------------------------------------- */
 
 .password-text,

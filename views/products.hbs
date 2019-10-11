@@ -1,24 +1,39 @@
 {{#extend "stylesheets"}}
-<link rel="stylesheet" href="/stylesheets/product-list.css" />
+<link rel="stylesheet" href="/stylesheets/products.css" />
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 {{/extend}}
     
-<h1>Product List</h1>
+<h1 class="title">Product List</h1>
 <div class="product-list">
     {{#each products}}
         <div class="product-list-element">
-            <a href="/product/{{this.product_name}}" ><h3 class="capitalized">{{this.product_name}}</h3></a>
-            <a class="add-wishlist" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
-            <h4 class="capitalized">Brand: {{this.brands}}</h4>
-            <img src="{{this.image_url}}">
-            {{#ifCond this.nutrition_grades_tags}}
-                <h4>🤷‍♂️</h4>
-            {{else}}
-                <img src="/images/nutriscore-{{this.nutrition_grades_tags}}.png">
-            {{/ifCond}}
-
+            <ul class="product-ul">
+                <li>
+                    <div class="image-div">
+                        {{#if this.image_url}}
+                            <img class="food-img" src="{{this.image_url}}">
+                        {{else}}
+                            <img class="food-img" src="/images/wishlist5.png">
+                        {{/if}}
+                     </div>
+                </li>
+                <li>
+                    <span class="product-name-and-brand">
+                        <a href="/product/{{this.product_name}}"><h3 class="name capitalized">{{this.product_name}}</h3></a>
+                    </span>
+                <li><h4 class="brand capitalized">{{this.brands}}</h4></li>
+                <li><a class="add-wishlist" href="/add-wishlist/{{this.id}}" type="button">❤️</a></li>
+                </li>
+                <li>
+                    <div>
+                        {{#ifCond this.nutrition_grades_tags}}
+                            <h4>🤷‍♂️</h4>
+                        {{else}}
+                            <img class="nutriscore" src="/images/nutriscore-{{this.nutrition_grades_tags}}.png">
+                        {{/ifCond}}
+                    </div>
+                </li>
+            </ul>
         </div>
     {{/each}}
 </div>
-
-{{!-- Be able to show the correct image depending on the nutriscore  --}}
-
