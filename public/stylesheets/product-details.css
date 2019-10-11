@@ -1,3 +1,106 @@
-.capitalized {
+html {
+    background-color: #F6F6F8;;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5%;
+}
+
+.brand.capitalized {
+    text-transform: capitalize;
+    flex: 1;
+    display: flex;
+    align-self: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 300;
+    margin:0;
+    margin-bottom: 5%;
+    font-size: 1.5em;
+}
+
+.capitalized.product-name{
+    font-family: 'Amatic SC', cursive;
+    font-size: 45px;
+    margin-bottom: 5%;
+    margin-top:5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.food-img {
+    height: auto;
+    max-width: 250px;
+    border-radius: 30px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#add-wishlist {
+    font-size: 0.7em;
+    margin-left:20px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.titles.capitalized {
+    text-transform: capitalize;
+    flex: 1;
+    display: flex;
+    align-self: center;
+    font-weight: 300;
+    margin:0;
+    margin-bottom: 5%;
+    font-size: 1.2em;
+}
+
+.nutrients.capitalized {
     text-transform: capitalize;
 }
+
+.repeating-before {
+    list-style: none;
+    padding: 0;
+  }
+
+.repeating-before li {
+    padding-left: 1rem;
+    text-indent: -0.7rem;
+}
+  
+.repeating-before li:nth-child(1n)::before {
+    content: "🧂 ";
+}
+  
+.repeating-before li:nth-child(2n)::before {
+    content: " ";
+}
+  
+.repeating-before li:nth-child(3n)::before {
+    content: " ";
+}
+
+.button {
+  background-color: #88D3C1;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button2 {
+    background-color: #FF6457;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }

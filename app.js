@@ -93,7 +93,9 @@ app.locals.title = 'Express - Generated with IronGenerator'
 
 const home = require('./routes/home')
 app.use('/', home)
+
 app.use('/', require('./routes/products'))
+
 app.use('/', require('./routes/add-wishlist'))
 
 const auth = require('./routes/auth');

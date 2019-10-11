@@ -1,23 +1,18 @@
 {{#extend "stylesheets"}}
 <link rel="stylesheet" href="/stylesheets/product-details.css" />
 {{/extend}}
-    
-<p><a class="button" href="/products">Go back</a></p>
 
 <div>
-    <h2 class="capitalized">{{product.product_name}}</h2>
-    <a class="add-favorite" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
-    <h4 class="capitalized">Brand: {{product.brands}}</h4>
-    <h4 class="capitalized">Stores: {{product.stores}}</h4>
-    <h4>Nutrients: </h4>
-        <ul><li>Salt: {{product.nutrient_levels.salt}}</li></ul>
-        <ul><li>Sugars: {{product.nutrient_levels.sugars}}</li></ul>
-        <ul><li>Fat: {{product.nutrient_levels.fat}}</li></ul>
-        <ul><li>Saturated Fat: {{product.nutrient_levels.saturated-fat}}</li></ul>
-    {{#if}}
-        <img src="{{image_url}}">
-    {{else}}
-         <h4></h4>
-    {{/if}}
-    <p><a class="button" href="/product/{{this._id}}/edit">Edit product</a></p>
+    <h2 class="capitalized product-name">{{product.product_name}}
+        <a id="add-wishlist" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
+    </h2>
+    <h4 class="brand capitalized">{{product.brands}}</h4>
+    <h4 class="titles capitalized">Stores: {{product.stores}}</h4>
+    <h4 class="titles capitalized">Nutrients: </h4>
+        <ul class="repeating-before"><li class="nutrients capitalized">Salt: {{product.nutrient_levels.salt}}</li></ul>
+        <ul class="repeating-before"><li class="nutrients capitalized">Sugars: {{product.nutrient_levels.sugars}}</li></ul>
+        <ul class="repeating-before"><li class="nutrients capitalized">Fat: {{product.nutrient_levels.fat}}</li></ul>
+    <img class="food-img" src="{{image_url}}">
+    <p><a class="button" href="/product/edit/{{product.id}}">Edit product</a></p>
+    <p><a class="button2" href="/products">Go back</a></p>
 </div>
