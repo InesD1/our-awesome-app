@@ -72,7 +72,7 @@ router.post("/login", (req,res)=> {
 })
 
 router.get("/login", (req,res)=> {
-    res.render("auth/login", {connectedUser:true});
+    res.render("auth/login");
 })
   
 router.get("/logout", (req, res)=> {

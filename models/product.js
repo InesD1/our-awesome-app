@@ -10,7 +10,6 @@ var productSchema = new mongoose.Schema(
             salt: String,
             sugars: String, 
             fat: String,
-            saturatedfat: String,
         },
         nutrition_grades_tags:[String], 
         code: String, 
@@ -22,6 +21,6 @@ var productSchema = new mongoose.Schema(
     }
 )
 productSchema.index({ countries: 1})
-const Product = mongoose.model("product", productSchema, 'cleanedUpFoods')
+const Product = mongoose.model('cleanedUpFoods', productSchema, 'cleanedUpFoods')
 
 module.exports = Product

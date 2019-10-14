@@ -1,0 +1,92 @@
+html {
+    background-color: #F6F6F8;;
+    font-family: 'Roboto', sans-serif;
+}
+
+.capitalized {
+    text-transform: capitalize;
+}
+
+.title {
+    margin: 7%;
+    font-family: 'Amatic SC', cursive;
+    font-size: 70px;
+    margin-bottom: 0px;
+}
+
+.product-list-element {
+    background: white;
+    border-radius: 30px;
+    margin: 5%;
+    box-shadow: 5px 5px 5px 5px #EBEBEB;
+}
+
+.product-ul {
+    list-style: none;
+    padding: 5px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.product-name-and-brand {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.name.capitalized {
+    flex: 1;
+    font-size: 2.5em;
+    display: flex;
+    align-self: center;
+    color: black;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.name.capitalized:hover {
+    color: #88D3C1;
+}
+
+.brand.capitalized {
+    flex: 1;
+    display: flex;
+    align-self: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 300;
+    margin:0;
+    margin-bottom: 5%;
+    font-size: 1.5em;
+}
+
+.food-img {
+    height: 100px;
+    width: auto;
+    border-radius: 30px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    box-shadow: 5px 5px 5px 5px #EBEBEB;
+}
+
+.nutriscore {
+    height: auto;
+    width: 150px;
+}
+
+.add-wishlist {
+    flex: 1;
+    display: flex;
+    align-self: center;
+    font-size: 2.5em;
+}
