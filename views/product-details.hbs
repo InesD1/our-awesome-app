@@ -2,17 +2,33 @@
 <link rel="stylesheet" href="/stylesheets/product-details.css" />
 {{/extend}}
 
-<div>
+<div class="title">
     <h2 class="capitalized product-name">{{product.product_name}}
-        <a id="add-wishlist" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
+        <h4 class="brand capitalized">{{product.brands}}</h4>
     </h2>
-    <h4 class="brand capitalized">{{product.brands}}</h4>
-    <h4 class="titles capitalized">Stores: {{product.stores}}</h4>
-    <h4 class="titles capitalized">Nutrients: </h4>
-        <ul class="repeating-before"><li class="nutrients capitalized">Salt: {{product.nutrient_levels.salt}}</li></ul>
-        <ul class="repeating-before"><li class="nutrients capitalized">Sugars: {{product.nutrient_levels.sugars}}</li></ul>
-        <ul class="repeating-before"><li class="nutrients capitalized">Fat: {{product.nutrient_levels.fat}}</li></ul>
-    <img class="food-img" src="{{image_url}}">
-    <p><a class="button" href="/product/edit/{{product.id}}">Edit product</a></p>
-    <p><a class="button2" href="/products">Go back</a></p>
 </div>
+
+<div class="product-list-element">
+    <ul class="product-ul">
+        <li>
+             <img class="food-img" src="{{image_url}}">
+        </li>
+        <li>
+            <a id="add-wishlist" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
+        </li>
+        <li>
+            <h4 class="titles capitalized">Stores: {{product.stores}}</h4>
+        </li>
+        <li>
+            <h4 class="titles capitalized">Nutrients: </h4>
+        </li>
+        <li>
+            <ul class="repeating-before"><li class="nutrients capitalized">Salt: {{product.nutrient_levels.salt}}</li></ul>
+            <ul class="repeating-before"><li class="nutrients capitalized">Sugars: {{product.nutrient_levels.sugars}}</li></ul>
+            <ul class="repeating-before"><li class="nutrients capitalized">Fat: {{product.nutrient_levels.fat}}</li></ul>
+        </li>
+    </ul>
+</div>    
+ 
+<p><a class="button" href="/product/edit/{{product.id}}">Edit product</a></p>
+<p><a class="button2" href="/products">Go back</a></p>
