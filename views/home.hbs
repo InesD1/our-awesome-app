@@ -7,21 +7,9 @@
 {{/extend}}
 
 <body>
-      <div id="header">	
-        <div class='foodie-container'>
-        <li class='foodie'>FOODIE</li>  
-      </div>
-      <div class='li-container'>   
-        <ul>
-                <li><a href="">ACCOUNT</a></li>
-                <li><a href="">WISHLIST</a></li>
-                <li><a href="">ABOUT US</a></li>
-                <li><a href="/login">LOG OUT</a></li>                                              
-        </ul>		
-      </div>  
-        </div>
+   
     <div class="s013">
-      <form>
+      <form action="/search" method="POST">
         <fieldset class='title'>
           <legend>WHAT ARE YOU LOOKING FOR?</legend>
         </fieldset>
@@ -30,70 +18,58 @@
             <div class="input-wrap first">
               <div class="input-field first">
                 <label>PRODUCT</label>
-                <input type="text" placeholder="ex: cheese, chocolate, cereal, milk" />
+                <input type="text" name="productInput" placeholder="ex: cheese, chocolate, cereal, milk" />
               </div>
             </div>
-            <div class="input-wrap second">
+            {{!-- <div class="input-wrap second">
               <div class="input-field second">
                 <label>WHAT</label>
                 <div class="input-select">
                   <select data-trigger="" name="choices-single-defaul">
-                    <option placeholder="">TYPE</option>
-                    <option>CATEGORY</option>
+                    <option>PRODUCT NAME</option>
                     <option>BRAND</option>
                   </select>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
-          <button class="btn-search" type="button">SEARCH</button>
         </div>
+        <button class="btn-search" type="submit">SEARCH</button>
       </form>
     </div>
-=======
-{{/extend}}
+    {{#if products}}
+     {{#each products}}
+        <div class="product-list-element">
+            <ul class="product-ul">
+                <li>
+                    <div class="image-div">
+                        {{#if this.image_url}}
+                            <img class="food-img" src="{{this.image_url}}">
+                        {{else}}
+                            <img class="food-img" src="/images/wishlist5.png">
+                        {{/if}}
+                     </div>
+                </li>
+                <li>
+                    <span class="product-name-and-brand">
+                        <a href="/product/{{this.product_name}}"><h3 class="name capitalized">{{this.product_name}}</h3></a>
+                    </span>
+                <li><h4 class="brand capitalized">{{this.brands}}</h4></li>
+                <li><a class="add-wishlist" href="/add-wishlist/{{this.id}}" type="button">❤️</a></li>
+                </li>
+                <li>
+                    <div>
+                        {{#ifCond this.nutrition_grades_tags}}
+                            <h4>🤷‍♂️</h4>
+                        {{else}}
+                            <img class="nutriscore" src="/images/nutriscore-{{this.nutrition_grades_tags}}.png">
+                        {{/ifCond}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    {{/each}}
+{{else}}
 
+{{/if}}
 
-
-<div class='titles-container'>
-  <h1 class='titles'>FOODIE</h1>
-  <h2 class='title-look'>What are you looking for?</h2>
-
-<form id="content">
-  <input type="text" name="input" class="input" id="search-input">
-  <button type="reset" class="search" id="search-btn"></button>
-</form>
-
-<a class='green-btn-container green-btn green-send' href="/products" type="submit">SEARCH</a>
-
-<img class='img-login' src='images/logo.png'> 
-
-</div>
-
-
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous">
-</script>
-<script>
-
-const input = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-btn");
-
-const expand = () => {
-  searchBtn.classList.toggle("close");
-  input.classList.toggle("square");
-};
-
-searchBtn.addEventListener("click", expand);
-
-</script>
-<script src="js/extention/choices.js"></script>
-    <script>
-      const choices = new Choices('[data-trigger]',
-      {
-        searchEnabled: false,
-        itemSelectText: '',
-      });
-</script>

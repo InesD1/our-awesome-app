@@ -50,22 +50,15 @@ router.get('/product/:productName', (req, res) => {
 
 /*Edit product*/
 router.get("/product/edit/:productId", (req, res)=> {
-  Product.findById({ _id: req.params.productId })
+  Product.findByIdAndUpdate(req.params.productId)
     .then ((product) => {
       console.log(product)
-      res.render("edit-product", {product})
-    })
-  })
-
-router.post("/product/edit/:productId", (req, res)=>{
-  Product.findByIdAndUpdate(req.params.productId, req.body)
-    .then((product)=> {
-      res.redirect(`/product/${product._id}`)
+      res.redirect("/product/${product.product_name}")
     })
     .catch((err)=> {
       res.send(err)
     })
-})
+  })
 
 router.get("/product/delete/:productName", (req, res)=> {
   Product.findOneAndRemove({ product_name: req.params.productName })

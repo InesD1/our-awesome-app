@@ -10,7 +10,7 @@ const User = mongoose.model("user", {
     },
     firstname: String,
     lastname: String,
-    wishlist: [{type: mongoose.Types.ObjectId, ref: " "}], 
+    wishlist: [{type: Array, ref: " "}], 
 })
 
 module.exports = User;

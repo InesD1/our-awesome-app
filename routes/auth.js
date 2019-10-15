@@ -61,7 +61,7 @@ router.post("/login", (req,res)=> {
                     else if(!equal){res.json({loggedIn: false});} 
                     else {
                         req.session.user = user;
-                        res.redirect('/home')
+                        res.redirect('/products')
                     }
                 });
             }

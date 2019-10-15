@@ -17,57 +17,6 @@ section {
   display: block;
 }
 
-#header{
-  height:70px; 
-  background:#fff 1448px -2px no-repeat;
-  border-bottom:1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-
-#header ul{
-  text-align: center;
-}
-
-#header li{
-  list-style:none;
-  float:left;
-  margin-right: 50px;	
-  font-family: 'Amatic SC', cursive;
-}
-
-#header li a{
-  font-weight:700;
-  color:black;
-  font-size:28px;	
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-#headerli a:hover{
-  color:#000;
-  cursor:pointer;
-}
-
-.foodie-container{
-  list-style:none;
-  float:left;
-  margin-right:50px;	
-  font-family: 'Amatic SC', cursive;
-}
-
-.foodie{
-  font-weight:700;
-  color:black;
-  font-size: 50px;	
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-left: 30px;
-}
-
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -190,11 +139,11 @@ select {
   text-transform: none;
 }
 
-button,
+/* button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
-}
+} */
 
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -1122,7 +1071,7 @@ input {
   justify-content: center;
   align-items: center;
   /* margin-top: 20px; */
-}
+
 
 /* 
 .green-btn-container{

@@ -45,7 +45,7 @@ html {
 .product-ul {
     list-style: none;
     padding: 5px;
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
