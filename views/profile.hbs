@@ -4,15 +4,31 @@
 
 {{/extend}}
 
+    <div id="header">	
+        <div class='foodie-container'>
+            <li class='foodie'>FOODIE</li>  
+        </div>
+        <div class='li-container'>   
+            <ul>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">CONTACT</a></li>                                              
+            </ul>		
+        </div>  
+    </div>
 
 <div class='data-container1'>
 
+ <div class='header-img'>
   <div class="circle">
-    <img class="profilepic" src="images/logo.png">
+
+    <img class="profile-pic" src="images/profile.jpg">
   </div>
+</div>
 
 <div class='data-container2'>
-  <h1>Julieta</h1>
+  {{#if user}}
+  <h1>{{user.username}}</h1>
+  {{/if}}
 
 <button class='green-btn-container green-btn green-profile'>
   <div class="profile-upload">
@@ -22,10 +38,19 @@
   </div> 
 </button>
 
-  <button class='green-btn-container green-btn green-profile' type="submit" href='/wishlist'>Whishlist</button>
+  <button>
+    <a class='green-btn-container green-btn green-profile' type="submit" href="/wishlist">Wishlist</a>
+  </button>
 
-  <button class='green-btn-container green-btn green-profile' type="submit" href=''>Log Out</button>
+  <button>
+    <a class='green-btn-container green-btn green-profile' type="submit" href='/login'>Log Out</a>
+  </button>  
 
+<<<<<<< HEAD
+=======
+ 
+
+>>>>>>> 2f42961e40321f93432e3e630cbcd17fa1d209c9
 </div>
 
 
