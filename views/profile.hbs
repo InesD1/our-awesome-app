@@ -1,41 +1,35 @@
 {{#extend "stylesheets"}}
   <link rel="stylesheet" href="/stylesheets/profile.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+
 {{/extend}}
 
 
-<div class='data-container1'></div>
+<div class='data-container1'>
 
   <div class="circle">
     <img class="profile-pic" src="images/logo.png">
   </div>
-</div>
-
-
-  <div class="profile-image">
-    <i class="upload-button"></i>
-    <input class="file-upload" type="file" accept="image/*"/>
-  </div>
-
- </div>
 
 <div class='data-container2'>
-  <h1>Name</h1>
+  <h1>Julieta</h1>
 
- <div class='green-btn-container'>
-    <button class='green-btn' type="submit" href=''>Edit Profile</button>
- </div>
+<button class='green-btn-container green-btn green-profile'>
+  <div class="profile-upload">
+    <i class="upload-button"></i>
+    <input type="file" name="file" id="file" class="inputfile" />
+    <label for="file">Change Picture</label>
+  </div> 
+</button>
 
- <div class='green-btn-container'>
-    <button class='green-btn' type="submit" href='/wishlist'>Whishlist</button>
- </div>
+  <button class='green-btn-container green-btn green-profile' type="submit" href='/wishlist'>Whishlist</button>
 
- <div class='green-btn-container'>
-    <button class='green-btn' type="submit" href=''>Log Out</button>
- </div>
+  <button class='green-btn-container green-btn green-profile' type="submit" href=''>Log Out</button>
 
-
+  <img class='img-login img-send' src='images/logo.png'> 
 
 </div>
+
 
 
 
@@ -61,7 +55,7 @@ $(document).ready(function() {
     }
     
 
-    $(".file-upload").on('change', function(){
+    $(".inputfile").on('change', function(){
         readURL(this);
     });
     

@@ -1,5 +1,6 @@
  {{#extend "stylesheets"}}
     <link rel="stylesheet" href="/stylesheets/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 {{/extend}}
 
  <form class="form-container-signin" action="/signup" method="POST" class="form">
@@ -15,15 +16,14 @@
     <label class='name-signup' for="firstname">💚 First Name</label>
     <input class='form-field-signup' type="text" required name="firstname">
 
-    <label class='name-signup' for="lastname">💚 Last Name</label> 
-    <input class='form-field-signup' type="text" required name="lastname">
+    {{!-- <label class='name-signup' for="lastname">💚 Last Name</label> 
+    <input class='form-field-signup' type="text" required name="lastname"> --}}
 
     <label for="password" class='name-signup'>💚 Password</label>
     <span class="password-requirements">* 8 characters, at least 1 number and 1 letter</span>
 
     <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
     
-
     <div class="pure-controls">
             <label for="cb" class="pure-checkbox">
                 <input id="cb" type="checkbox"><a href="#">I've read the terms and conditions</a>
