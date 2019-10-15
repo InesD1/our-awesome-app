@@ -74,6 +74,7 @@ html {
     text-align: center;
     
   }
+
 /* 
   legend {
     font-family: 'Amatic SC', cursive;
@@ -167,7 +168,7 @@ input[type="password"] {
     border-radius: 4px;
     border: 2px grey;
     position: relative;
-    width: 70vw;
+    width: 28vw;
     height: 4vh;
     padding: 10px;
     margin-top: 5px;
@@ -197,7 +198,7 @@ input[type="password"] {
     font-size: 16px;
     color: #73D3C8;
     text-align: left;
-    width: 70vw;
+    width: 30vw;
 }
 
 .password-requirements{
@@ -206,7 +207,7 @@ input[type="password"] {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 16px;
-    width: 70vw;
+    width: 30vw;
 }
 
 .pure-controls {
@@ -314,7 +315,28 @@ input[type="password"] {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+  }
+
+/* .title-p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50vw;
+  height: 21vh;
+  background-color: #73D3C8;
+  padding: 10px;
+  border-radius: 5px;
+} */
+
+.p-1 {
+    background-color: #73D3C8;
+    font-size: 65px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;   
+    margin: 0;
   }
 
   .s013 {

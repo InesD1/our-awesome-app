@@ -3,7 +3,19 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 {{/extend}}
 
- <form class="form-container-signin" action="/signup" method="POST" class="form">
+    <div id="header">	
+                <div class='foodie-container'>
+                <li class='foodie'>FOODIE</li>  
+              </div>
+              <div class='li-container'>   
+                <ul>
+                    <li><a href="">ABOUT US</a></li>
+                    <li><a href="">CONTACT</a></li>                                              
+                </ul>		
+              </div>  
+    </div>
+
+    <form class="form-container-signin" action="/signup" method="POST" class="form">
 
     <h1 class='create-header'>CREATE AN ACCOUNT</h1>
 
@@ -15,9 +27,6 @@
 
     <label class='name-signup' for="firstname">💚 First Name</label>
     <input class='form-field-signup' type="text" required name="firstname">
-
-    {{!-- <label class='name-signup' for="lastname">💚 Last Name</label> 
-    <input class='form-field-signup' type="text" required name="lastname"> --}}
 
     <label for="password" class='name-signup'>💚 Password</label>
     <span class="password-requirements">* 8 characters, at least 1 number and 1 letter</span>
@@ -33,7 +42,6 @@
     <button class='green-btn-container green-btn' type="submit">Sign Up</button>
 
 </form>
-
 
 <script>
     window.onload = function() {
