@@ -880,7 +880,8 @@ legend {
   cursor: pointer;
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
-  margin-left: 10px;
+  margin-top: 20px;
+  margin-left: 25vw;
 }
 
 .s013 form .btn-search:hover {
