@@ -61,7 +61,6 @@ router.get("/product/edit/:productName", (req, res)=> {
   })
 
   router.post("/product/edit/:productName", (req, res)=> {
-    console.log(req.body)
     const {salt, sugars, fat, saturatedfat, nutrition_grades_tags} = req.body;
     Product.findOneAndUpdate({product_name: req.params.productName}, {nutrient_levels: {salt, sugars, fat, saturatedfat}, nutrition_grades_tags})
     .then((product) => {
