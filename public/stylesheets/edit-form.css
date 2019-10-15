@@ -7,6 +7,8 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: 'Amatic SC', cursive;
+
   }
 
 
@@ -19,4 +21,10 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: 'Amatic SC', cursive;
+
+  }
+
+  .edit-product-container {
+    margin : 2%; 
   }

@@ -49,20 +49,30 @@ router.get('/product/:productName', (req, res) => {
 });
 
 /*Edit product*/
-router.get("/product/edit/:productId", (req, res)=> {
-  Product.findByIdAndUpdate(req.params.productId)
+router.get("/product/edit/:productName", (req, res)=> {
+  Product.findOne({product_name: req.params.productName})
     .then ((product) => {
       console.log(product)
-      res.redirect("/product/${product.product_name}")
+      res.render("edit-product", {product})
     })
     .catch((err)=> {
       res.send(err)
     })
   })
 
+  router.post("/product/edit/:productName", (req, res)=> {
+    console.log(req.body)
+    const {salt, sugars, fat, saturatedfat, nutrition_grades_tags} = req.body;
+    Product.findOneAndUpdate({product_name: req.params.productName}, {nutrient_levels: {salt, sugars, fat, saturatedfat}, nutrition_grades_tags})
+    .then((product) => {
+      res.redirect(`/product/${product.product_name}`)
+    })
+  })
+
 router.get("/product/delete/:productName", (req, res)=> {
   Product.findOneAndRemove({ product_name: req.params.productName })
       .then((product)=> {
+        console.log(product)
       res.redirect(`/products`)
     })
     .catch((err)=> {
