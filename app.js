@@ -15,7 +15,7 @@ require("dotenv").config();
 hbs.registerPartials(__dirname + '/views/partials');
 
 mongoose
-  .connect('mongodb://localhost/openFoodFact', { useNewUrlParser: true })
+  .connect(process.env.MONGOURI, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -27,6 +27,10 @@ const appName = require('./package.json').name
 const debug = require('debug')(`${appName}:${path.basename(__filename).split('.')[0]}`)
 
 const app = express();
+
+app.locals.config = {
+  host: process.env.host
+}
 
 // Middleware Setup
 app.use(session({

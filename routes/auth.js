@@ -115,7 +115,7 @@ router.get("/reset-password", (req,res)=> {
     res.render("auth/reset-password", {token: req.query.token})
 })
 
-router.post("/reset-password", (req,res)=> {
+router.post("auth/reset-password", (req,res)=> {
     jwt.verify(req.body.token, process.env.jwtSecret, function(err, token){
         if(err) res.send(err)
         bcrypt.hash(req.body.password, 10, function(err, hash){

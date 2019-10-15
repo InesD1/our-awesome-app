@@ -1,28 +1,60 @@
 {{#extend "stylesheets"}}
   <link rel="stylesheet" href="/stylesheets/home.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet" />
   
 {{/extend}}
 
-
-<div class='titles-container'>
-  <h1 class='titles'>FOODIE</h1>
-  <h2 class='title-look'>What are you looking for?</h2>
-
-<form id="content">
-  <input type="text" name="input" class="input" id="search-input">
-  <button type="reset" class="search" id="search-btn"></button>
-</form>
-
-<button class='green-btn-container green-btn green-send' type="submit">SEARCH</button>
-
-<img class='img-login' src='images/logo.png'> 
-
-</div>
+<body>
+      <div id="header">	
+        <div class='foodie-container'>
+        <li class='foodie'>FOODIE</li>  
+      </div>
+      <div class='li-container'>   
+        <ul>
+                <li><a href="">ACCOUNT</a></li>
+                <li><a href="">WISHLIST</a></li>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="/login">LOG OUT</a></li>                                              
+        </ul>		
+      </div>  
+        </div>
+    <div class="s013">
+      <form>
+        <fieldset class='title'>
+          <legend>WHAT ARE YOU LOOKING FOR?</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="left">
+            <div class="input-wrap first">
+              <div class="input-field first">
+                <label>PRODUCT</label>
+                <input type="text" placeholder="ex: cheese, chocolate, cereal, milk" />
+              </div>
+            </div>
+            <div class="input-wrap second">
+              <div class="input-field second">
+                <label>WHAT</label>
+                <div class="input-select">
+                  <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="">TYPE</option>
+                    <option>CATEGORY</option>
+                    <option>BRAND</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-search" type="button">SEARCH</button>
+        </div>
+      </form>
+    </div>
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous">
+</script>
 <script>
 
 const input = document.getElementById("search-input");
@@ -35,4 +67,12 @@ const expand = () => {
 
 searchBtn.addEventListener("click", expand);
 
+</script>
+<script src="js/extention/choices.js"></script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
 </script>
