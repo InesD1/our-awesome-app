@@ -1,7 +1,6 @@
 html {
     background-color: #F6F6F8;;
     font-family: 'Roboto', sans-serif;
-    margin-left: 5%;
 }
 
 .brand.capitalized {
@@ -13,13 +12,12 @@ html {
     font-weight: 300;
     margin:0;
     margin-bottom: 5%;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .capitalized.product-name{
     font-family: 'Amatic SC', cursive;
     font-size: 45px;
-    margin-bottom: 5%;
     margin-top:5%;
     display: flex;
     flex-direction: row;
@@ -29,19 +27,48 @@ html {
 
 .food-img {
     height: auto;
-    max-width: 250px;
+    max-width: 150px;
     border-radius: 30px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10%;
 }
 
+.product-list-element {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px 5px #EBEBEB;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 3%; 
+}
+
+.product-ul {
+    list-style: none;
+    padding: 5px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+li {
+    margin-top: 5%; 
+    width: auto;
+}
+
 #add-wishlist {
-    font-size: 0.7em;
-    margin-left:20px;
+    font-size: 1.5em;
 }
 
 a:link {
     text-decoration: none;
+}
+
+.title {
+    margin-left: 5%;
 }
 
 .titles.capitalized {
@@ -57,6 +84,7 @@ a:link {
 
 .nutrients.capitalized {
     text-transform: capitalize;
+    width: auto;
 }
 
 .repeating-before {
@@ -91,6 +119,7 @@ a:link {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin-left: 5%;
 }
 
 .button2 {
@@ -103,4 +132,5 @@ a:link {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-left: 5%;
   }

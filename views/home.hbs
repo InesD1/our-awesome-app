@@ -1,5 +1,6 @@
 {{#extend "stylesheets"}}
   <link rel="stylesheet" href="/stylesheets/home.css"/>
+
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet" />
 {{/extend}}
@@ -49,6 +50,26 @@
         </div>
       </form>
     </div>
+=======
+{{/extend}}
+
+
+
+<div class='titles-container'>
+  <h1 class='titles'>FOODIE</h1>
+  <h2 class='title-look'>What are you looking for?</h2>
+
+<form id="content">
+  <input type="text" name="input" class="input" id="search-input">
+  <button type="reset" class="search" id="search-btn"></button>
+</form>
+
+<a class='green-btn-container green-btn green-send' href="/products" type="submit">SEARCH</a>
+
+<img class='img-login' src='images/logo.png'> 
+
+</div>
+
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
