@@ -960,6 +960,11 @@ legend {
 /* 
 
 
+  background-color: #F6F6F8;;
+  font-family: 'Roboto', sans-serif;
+}
+
+
 #content {
   position: absolute;
   height: 50px;
@@ -1099,6 +1104,18 @@ input {
   transform: translate(-100%, -50%);
 }
 
+.titles {
+  font-family: 'Amatic SC', cursive;
+  font-size: 70px;
+  margin:0; 
+}
+
+.title-look {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  margin:0; 
+}
+
 .titles-container{
   display: flex;
   flex-direction: column;  
@@ -1117,16 +1134,23 @@ input {
   justify-content: center;
   border: none;
   margin-top: 180px;
+
 } */
 /* 
+=======
+  text-decoration: none;
+  align-items:center;
+}
+
+
 .green-btn{
   color: white;
   font-size: 20px;   
 }
 
 .img-login{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: relative;
   border-radius: 30px;
   border: none; 
