@@ -3,44 +3,70 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 {{/extend}}
 
-    <div id="header">	
-                <div class='foodie-container'>
-                <li class='foodie'>FOODIE</li>  
-              </div>
-              <div class='li-container'>   
-                <ul>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">CONTACT</a></li>                                              
-                </ul>		
-              </div>  
+<div id="header">	
+    <div class='foodie-container'>
+        <li class='foodie'>FOODIE</li>  
     </div>
+    <div class='li-container'>   
+        <ul>
+            <li>
+                <a href="">ABOUT US</a>
+            </li>
+            <li>
+                <a href="">CONTACT</a>
+            </li>                                              
+        </ul>		
+    </div>  
+</div>
 
-    <form class="form-container-signin" action="/signup" method="POST" class="form">
-
+<form 
+    class="form-container-signin" 
+    action="/signup" 
+    method="POST" 
+    class="form"
+>
     <h1 class='create-header'>CREATE AN ACCOUNT</h1>
-
     <label class='name-signup' for="username">💚 Username</label>
-    <input class='form-field-signup' type="text" required name="username">
-
+    <input 
+        class='form-field-signup' 
+        type="text" 
+        required name="username"
+    >
     <label class='name-signup' for="email">💚 Your Email</label>
-    <input class='form-field-signup' type="text" required name="email">
-
+    <input 
+        class='form-field-signup' 
+        type="text" 
+        required name="email"
+    >
     <label class='name-signup' for="firstname">💚 First Name</label>
-    <input class='form-field-signup' type="text" required name="firstname">
-
+    <input 
+        class='form-field-signup' 
+        type="text" 
+        required name="firstname"
+    >
     <label for="password" class='name-signup'>💚 Password</label>
-    <span class="password-requirements">* 8 characters, at least 1 number and 1 letter</span>
-
-    <input class='form-field-signup' type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="password">
-    
+    <span 
+        class="password-requirements"
+    >
+        * 8 characters, at least 1 number and 1 letter
+    </span>
+    <input 
+        class='form-field-signup' 
+        type="password" 
+        required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" 
+        name="password"
+    >
     <div class="pure-controls">
             <label for="cb" class="pure-checkbox">
                 <input id="cb" type="checkbox"><a href="#">I've read the terms and conditions</a>
             </label>
     </div>
-
-    <button class='green-btn-container green-btn' type="submit">Sign Up</button>
-
+    <button 
+        class='green-btn-container green-btn' 
+        type="submit"
+    >
+        Sign Up
+    </button>
 </form>
 
 <script>

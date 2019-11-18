@@ -3,43 +3,51 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 {{/extend}}
 
-        <div class='header-img'>
-            <div class='title'>
-            <legend>Make the best choices for your health</legend>
-            </div>
+    <div class='header-img'>
+        <div class='title'>
+        <legend>Make the best choices for your health</legend>
         </div>
-
-
+    </div>
                 
-        <form class="form-container" action="/login" method="POST">
-
-            
-    
-            <h1 class='form-header'>Log in</h1>
-            
-            <input class='form-fields' id="username" type="text" name="username" placeholder="Username">
-            
-            <input class='form-fields' id="password" type="password" required name="password" placeholder="Password">
-    
-            <div id='wrong-password'></div>
-    
-            <a class='form-forgot' href="/send-reset">Forgot password?</a>
-    
-            <h3 class='text-account text-font'>Don't have an Account?</h3>
-    
-            <div class='text-account'>
-                <a class='form-forgot' href="/signup">Sign Up</a>
-            </div>
-    
-            <button class='green-btn-container green-btn green-start' type="submit">START</button>
-    
-             <!-- <p class="validCredentials">Invalid credentials</p>
-            <p class="serverError">Something went wrong, try again later.</p>  -->
-        </form>  
+    <form class="form-container" action="/login" method="POST">
+        <h1 class='form-header'>Log in</h1>
+        <input 
+            class='form-fields' 
+            id="username" 
+            type="text" 
+            required name="username" 
+            placeholder="Username"
+        >
+        <input 
+            class='form-fields'
+            id="password" 
+            type="password" 
+            required name="password" 
+            placeholder="Password"
+        >
+        <button 
+            class='green-btn-container green-btn green-start' 
+            type="submit"
+        >
+            START
+        </button>
+        <div id='wrong-password'></div>
+        <a 
+            class='form-forgot' 
+            href="/send-reset"
+        >
+            Forgot password?
+        </a>
+        <div class='text-account'>
+            <a 
+                class='form-forgot' 
+                href="/signup"
+            >
+                No account? Sign Up
+            </a>
+        </div>
         
-</div>
-    
-
+    </form>  
 
 <script>
     window.onload = function() {

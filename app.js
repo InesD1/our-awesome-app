@@ -9,19 +9,21 @@ const logger = require('morgan')
 const path = require('path')
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-const createError = require('http-errors');
 
 require("dotenv").config();
 hbs.registerPartials(__dirname + '/views/partials');
 
 mongoose
-  .connect(process.env.MONGODB, { useNewUrlParser: true })
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  })
+ .connect(process.env.MONGODB, { 
+      useNewUrlParser: true, 
+      useUnifiedTopology: true, 
+    })
+ .then(x => {
+     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+   })
+   .catch(err => {
+     console.error('Error connecting to mongo', err)
+})
 
 const appName = require('./package.json').name
 const debug = require('debug')(`${appName}:${path.basename(__filename).split('.')[0]}`)
@@ -63,19 +65,17 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 
 //Register for hbs helper
 var blocks = {};
-
 hbs.registerHelper('extend', function(name, context) {
     var block = blocks[name];
     if (!block) {
         block = blocks[name] = [];
     }
-
-    block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+    block.push(context.fn(this)); 
+    // for older versions of handlebars, use block.push(context(this));
 });
 
 hbs.registerHelper('block', function(name) {
     var val = (blocks[name] || []).join('\n');
-
     // clear the block
     blocks[name] = [];
     return val;
@@ -94,20 +94,11 @@ hbs.registerHelper('ifCond', function(v1, options) {
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator'
-
-const home = require('./routes/home')
-app.use('/', home)
-
+app.use('/', require('./routes/home'))
 app.use('/', require('./routes/products'))
-
 app.use('/', require('./routes/add-wishlist'))
-
-const auth = require('./routes/auth');
-app.use('/', auth);
-
-const profile = require('./routes/profile');
-app.use('/', profile);
+app.use('/', require('./routes/auth'))
+app.use('/', require('./routes/profile'))
 
 app.listen(3000, ()=>{console.log('App is listening on port 3000')});
-
 module.exports = app

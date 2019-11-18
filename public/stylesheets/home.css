@@ -7,7 +7,6 @@ html {
 body {
   margin: 0;
 }
-
 article,
 aside,
 footer,
@@ -26,7 +25,7 @@ figcaption,
 figure,
 main {
   /* 1 */
-  display: block;
+  display: inline-block;
 }
 
 figure {
@@ -36,7 +35,7 @@ figure {
 hr {
   box-sizing: content-box;
   height: 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
 pre {
@@ -112,6 +111,7 @@ audio:not([controls]) {
 
 img {
   border-style: none;
+
 }
 
 svg:not(:root) {
@@ -131,19 +131,13 @@ textarea {
 
 button,
 input {
-  overflow: visible;
+  overflow: hidden;
 }
 
 button,
 select {
   text-transform: none;
 }
-
-/* button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-} */
 
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -497,7 +491,7 @@ legend {
   position: relative;
   max-height: 300px;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: hidden;
   will-change: scroll-position;
 }
 
@@ -646,6 +640,8 @@ legend {
   content: '';
   width: 12px;
   height: 12px;
+  background-size: cover;
+  background-position: center;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%2300ad5f' aria-hidden='true' data-prefix='fas' data-icon='check' class='svg-inline--fa fa-check fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='%2300ad5f' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'%3e%3c/path%3e%3c/svg%3e");
   position: absolute;
   top: 4px;
@@ -881,7 +877,7 @@ legend {
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
   margin-top: 20px;
-  margin-left: 25vw;
+  margin-left: 30vw;
 }
 
 .s013 form .btn-search:hover {
@@ -903,219 +899,3 @@ legend {
     width: 100%;
   }
 }
-
-
- 
-
-/* 
-
-
-  background-color: #F6F6F8;;
-  font-family: 'Roboto', sans-serif;
-}
-
-
-#content {
-  position: absolute;
-  height: 50px;
-  width: 80px;
-  margin-left: 170px;
-  top: 37%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#content.on {
-  -webkit-animation-name: in-out;
-  animation-name: in-out;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
-
-input {
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  border: 4px solid black;
-  border-radius: 50%;
-  background: none;
-  color: black;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: Roboto;
-  outline: 0;
-  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
-    padding 0.2s;
-  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
-    padding 0.2s;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
-  -webkit-transform: translate(-100%, -50%);
-  -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
-}
-
-.search {
-  background: none;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  padding: 0;
-  border-radius: 100%;
-  outline: 0;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  -webkit-transform: translate(-100%, -50%);
-  -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
-}
-
-.search:before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 4px;
-  background-color: black;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-top: 26px;
-  margin-left: 17px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-}
-
-.close {
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
-}
-
-.close:before {
-  content: "";
-  position: absolute;
-  width: 27px;
-  height: 4px;
-  margin-top: -1px;
-  margin-left: -13px;
-  background-color: black;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-}
-
-.close:after {
-  content: "";
-  position: absolute;
-  width: 27px;
-  height: 4px;
-  background-color: black;
-  margin-top: -1px;
-  margin-left: -13px;
-  cursor: pointer;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.square {
-  box-sizing: border-box;
-  padding: 0 40px 0 10px;
-  width: 268px;
-  height: 50px;
-  border: 4px solid black;
-  border-radius: 0;
-  background: none;
-  color: black;
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 400;
-  outline: 0;
-  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
-    padding 0.2s;
-  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
-    padding 0.2s;
-  -webkit-transition-delay: 0.4s, 0s, 0.4s;
-  transition-delay: 0.4s, 0s, 0.4s;
-  -webkit-transform: translate(-100%, -50%);
-  -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
-}
-
-.titles {
-  font-family: 'Amatic SC', cursive;
-  font-size: 70px;
-  margin:0; 
-}
-
-.title-look {
-  font-family: 'Amatic SC', cursive;
-  font-size: 30px;
-  margin:0; 
-}
-
-.titles-container{
-  display: flex;
-  flex-direction: column;  
-  justify-content: center;
-  align-items: center;
-  /* margin-top: 20px; */
-
-
-/* 
-.green-btn-container{
-  background-color: #73D3C8;
-  border-radius: 4px;
-  width: 73vw;
-  height: 7vh;
-  display: flex;
-  justify-content: center;
-  border: none;
-  margin-top: 180px;
-
-} */
-/* 
-=======
-  text-decoration: none;
-  align-items:center;
-}
-
-
-.green-btn{
-  color: white;
-  font-size: 20px;   
-}
-
-.img-login{
-  width: 150px;
-  height: 150px;
-  position: relative;
-  border-radius: 30px;
-  border: none; 
-  margin-top: 50px;
-}
-
-.titles{
-  font-family: 'Amatic SC', cursive;
-  font-size: 60px;
-}
-
-.title-look{
-  font-family: 'Amatic SC', cursive;
-  font-size: 30px;
-  margin-top: -10px;
-} */
- 
-

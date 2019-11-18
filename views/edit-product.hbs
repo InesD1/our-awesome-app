@@ -4,14 +4,59 @@
 
 <p>{{product.brands}}</p>
 <div class="edit-product-container">
-    <form action="/product/edit/{{product.product_name}}" method="POST">
-        <input class="form" type="text" name="stores" placeholder="Stores">
-        <input class="form" type="text" name="salt" placeholder="Salt level">
-        <input class="form" type="text" name="sugars" placeholder="Sugar level">
-        <input class="form" type="text" name="fat" placeholder="Fat level">
-        <input class="form" type="text" name="saturatedfat" placeholder="Saturated fat level">
-        <input class="form" type="text" name="nutrition_grades_tags" placeholder="Nutrition grade">
-        <button class="button" type="submit">Submit</button>
-        <p><a class="button2" href="/products">Go back</a></p>
+    <form 
+        action="/product/edit/{{product.product_name}}" 
+        method="POST"
+    >
+        <input 
+            class="form" 
+            type="text" 
+            name="stores" 
+            placeholder="Stores"
+        >
+        <input 
+            class="form" 
+            type="text" 
+            name="salt" 
+            placeholder="Salt level"
+        >
+        <input 
+            class="form" 
+            type="text" 
+            name="sugars" 
+            placeholder="Sugar level"
+        >
+        <input 
+            class="form" 
+            type="text" 
+            name="fat" 
+            placeholder="Fat level"
+        >
+        <input 
+            class="form" 
+            type="text" 
+            name="saturatedfat" 
+            placeholder="Saturated fat level"
+        >
+        <input 
+            class="form" 
+            type="text" 
+            name="nutrition_grades_tags" 
+            placeholder="Nutrition grade"
+        >
+        <button 
+            class="button" 
+            type="submit"
+        >
+            Submit
+        </button>
+        <p>
+            <a 
+                class="button2" 
+                href="/home"
+            >
+                Go back
+            </a>
+        </p>
     </form>
 </div>

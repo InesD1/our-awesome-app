@@ -35,7 +35,7 @@ router.get("/products", (req, res, next)=> {
 
 /* Read data from products details page */
 router.get('/product/:productName', (req, res) => {
-  // Product.findById(req.params.productId) not working somehow
+  /* Product.findById(req.params.productId) not working somehow */
   Product.findOne({ product_name: req.params.productName })
     .limit(1000)  
     .then((product) => {
@@ -88,7 +88,3 @@ function imageStringBuilder(product) {
     var imageUrl = `https://static.openfoodfacts.org/images/products/${productCodeSplit}/${fileName}`
     return imageUrl
 }
-
-// var defaultQuery = {product_name:{$ne:""}, countries: "France", brands:{$ne:""}, _id:{$ne:null}}
-
-// Object.assign(defaultQuery, {name: "Cereal"})

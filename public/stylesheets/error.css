@@ -1,0 +1,36 @@
+html {
+    background-image:url("/images/computer.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #C2F1FF;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    margin-left: 5%; 
+}
+
+.footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  top: 555px;
+  width: auto; 
+  height: auto;
+  background-color: white;
+  color: black;
+  text-align: center;
+  display: flex;
+  margin: 0; 
+  padding-left: 37%;
+  align-items: center;
+}
+
+.logo{
+    border-radius: 20%;
+    width: auto; 
+    height: 30px;
+    display: inline-block;
+    padding-left: 5px;
+}
