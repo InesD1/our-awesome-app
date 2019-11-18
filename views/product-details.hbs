@@ -14,24 +14,60 @@
              <img class="food-img" src="{{image_url}}">
         </li>
         <li>
-            <a id="add-wishlist" href="/add-wishlist/{{this._id}}" type="button">❤️</a>
+            <a 
+                id="add-wishlist" 
+                href="/add-wishlist/{{this._id}}" 
+                type="button"
+            >
+                ❤️
+            </a>
         </li>
         <li>
-            <h4 class="titles capitalized">Stores: {{product.stores}}</h4>
+            <h4 class="titles capitalized">
+                Stores: {{product.stores}}
+            </h4>
         </li>
         <li>
             <h4 class="titles capitalized"></h4>
         </li>
         <li>
-            <ul class="repeating-before"><li class="nutrients capitalized">Salt: {{product.nutrient_levels.salt}}</li></ul>
-            <ul class="repeating-before"><li class="nutrients capitalized">Sugars: {{product.nutrient_levels.sugars}}</li></ul>
-            <ul class="repeating-before"><li class="nutrients capitalized">Fat: {{product.nutrient_levels.fat}}</li></ul>
+            <ul class="repeating-before">
+                <li class="nutrients capitalized">
+                    Salt: {{product.nutrient_levels.salt}}
+                </li>
+            </ul>
+            <ul class="repeating-before">
+                <li class="nutrients capitalized">
+                    Sugars: {{product.nutrient_levels.sugars}}
+                </li>
+            </ul>
+            <ul class="repeating-before">
+                <li class="nutrients capitalized">
+                    Fat: {{product.nutrient_levels.fat}}
+                </li>
+            </ul>
         </li>
         <li>
-            <img class="nutriscore" src="/images/nutriscore-{{this.nutrition_grades_tags}}.png">
+            <img 
+                class="nutriscore" 
+                src="/images/nutriscore-{{this.nutrition_grades_tags}}.png"
+            >
         </li>
     </ul>
 </div>    
- 
-<p><a class="button" href="/product/edit/{{product.product_name}}">Edit product</a></p>
-<p><a class="button2" href="/products">Go back</a></p>
+<p>
+    <a 
+        class="button" 
+        href="/product/edit/{{product.product_name}}"
+    >
+        Edit product
+    </a>
+</p>
+<p>
+    <a 
+        class="button2" 
+        href="/products"
+    >
+        Go back
+    </a>
+</p>

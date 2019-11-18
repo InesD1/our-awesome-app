@@ -20,17 +20,35 @@
                 </li>
                 <li>
                     <span class="product-name-and-brand">
-                        <a href="/product/{{this.product_name}}"><h3 class="name capitalized">{{this.product_name}}</h3></a>
+                        <a href="/product/{{this.product_name}}">
+                            <h3 class="name capitalized">
+                            {{this.product_name}}
+                            </h3>
+                        </a>
                     </span>
-                <li><h4 class="brand capitalized">{{this.brands}}</h4></li>
-                <li><a class="add-wishlist" href="/add-wishlist/{{this.product_name}}" type="button">❤️</a></li>
+                <li>
+                    <h4 class="brand capitalized">
+                        {{this.brands}}
+                    </h4>
+                </li>
+                <li>
+                    <a 
+                        class="add-wishlist" 
+                        href="/add-wishlist/{{this.product_name}}" 
+                        type="button"
+                    >
+                        ❤️
+                    </a>
                 </li>
                 <li>
                     <div>
                         {{#ifCond this.nutrition_grades_tags}}
                             <h4>🤷‍♂️</h4>
                         {{else}}
-                            <img class="nutriscore" src="/images/nutriscore-{{this.nutrition_grades_tags}}.png">
+                            <img 
+                                class="nutriscore" 
+                                src="/images/nutriscore-{{this.nutrition_grades_tags}}.png"
+                            >
                         {{/ifCond}}
                     </div>
                 </li>

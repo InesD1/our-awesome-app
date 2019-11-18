@@ -3,32 +3,50 @@
 {{/extend}}
 
 {{#if user}}
-     <div id="header">	
-        <div class='foodie-container'>
-        <li class='foodie'><a href="/home">FOODIE</a></li>
-      </div>
-      <div class='li-container'>   
-        <ul>
-                <li><a href="/profile">ACCOUNT</a></li>
-                <li><a href="">WISHLIST</a></li>
-                <li><a href="">ABOUT US</a></li>
-                <li><a href="/login">LOG OUT</a></li>                                              
-        </ul>		
-      </div>  
-        </div>
+  <div id="header">	
+    <div class='foodie-container'>
+      <li class='foodie'>
+        <a href="/home">FOODIE</a>
+      </li>
+    </div>
+    <div class='li-container'>   
+      <ul>
+        <li>
+          <a href="/profile">ACCOUNT</a>
+        </li>
+        <li>
+          <a href="">WISHLIST</a>
+        </li>
+        <li>
+          <a href="">ABOUT US</a>
+        </li>
+        <li>
+          <a href="/login">LOG OUT</a>
+        </li>                                              
+      </ul>		
+    </div>  
+  </div>
+
 {{else}}
   <div id="header">	
-        <div class='foodie-container'>
-        <li class='foodie'><a href="/home">FOODIE</a></li>
-      </div>
-      <div class='li-container'>   
-        <ul>
-                <li><a href="">ABOUT US</a></li>
-                <li><a href="/login">LOG IN</a></li>                                              
-        </ul>		
-      </div>  
-        </div>
+    <div class='foodie-container'>
+      <li class='foodie'>
+        <a href="/home">FOODIE</a>
+      </li>
+    </div>
+    <div class='li-container'>   
+      <ul>
+        <li>
+          <a href="">ABOUT US</a>
+        </li>
+        <li>
+          <a href="/login">LOG IN</a>
+        </li>                                              
+      </ul>		
+    </div>  
+  </div>
 {{/if}}
+
 {{#if user}}
       <h1 class="welcome">Welcome {{user.username}} 😍</h1>
 {{/if}}

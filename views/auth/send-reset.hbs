@@ -4,15 +4,30 @@
 {{/extend}}
 
 <form class="send-form-container" action="/send-reset" method="POST">
-{{!-- action="{{{config.host}}}/auth/send-reset" --}}
-        <h1 class='send-text send-title'>Forgot your password?</h1>
-        <h2 class='send-text send-worries'>No worries! 😀</h2>
-        <h3 class='send-text send-p'>Enter the email account you used to Sign Up and we will send you instructions to reset your password.</h3>
-        <input class='form-field-signup' type="text" name="email" placeholder="email address">
-        <button class='green-btn-container green-btn green-send' type="submit">Send reset link</button>
-        <img class='img-login img-send' src='images/logo.png'> 
-        <p id="response"></p>
+    <h1 class='send-text send-title'>Forgot your password?</h1>
+    <h2 class='send-text send-worries'>No worries! 😀</h2>
+    <h3 class='send-text send-p'>
+        Enter the email account you used to Sign Up and we will send you instructions to reset your password.
+    </h3>
+    <input 
+        class='form-field-signup' 
+        type="text" 
+        required name="email" 
+        placeholder="email address"
+    >
+    <button 
+        class='green-btn-container green-btn green-send' 
+        type="submit"
+    >
+        Send reset link
+    </button>
+    <img 
+        class='img-login img-send' 
+        src='images/logo.png'
+    > 
+    <p id="response"></p>
 </form>
+
 <script>
     $(".green-btn-container").click(function(e){
         e.preventDefault();
@@ -22,4 +37,3 @@
         })
     })
 </script>
-
