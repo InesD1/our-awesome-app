@@ -5,58 +5,68 @@
 <p>{{product.brands}}</p>
 <div class="edit-product-container">
     <form 
+        class="form-container-signin" 
         action="/product/edit/{{product.product_name}}" 
         method="POST"
     >
+    <h1 class='create-header'>ADD SOME INFORMATION</h1>
+        <label class='nametag'>Stores</label>
         <input 
-            class="form" 
+            class='form-field-signup' 
             type="text" 
             name="stores" 
-            placeholder="Stores"
+            placeholder="Albert Heijn, Carrefour..."
         >
+        <label class='nametag'>Salt Level</label>
         <input 
-            class="form" 
+            class='form-field-signup' 
             type="text" 
             name="salt" 
-            placeholder="Salt level"
+            placeholder="High, medium or low"
         >
+        <label class='nametag'>Sugar Level</label>
         <input 
-            class="form" 
+            class='form-field-signup' 
             type="text" 
             name="sugars" 
-            placeholder="Sugar level"
+            placeholder="High, medium or low"
         >
+        <label class='nametag'>Fat Level</label>
         <input 
-            class="form" 
+            class='form-field-signup' 
             type="text" 
             name="fat" 
-            placeholder="Fat level"
+            placeholder="High, medium or low"
         >
+        <label class='nametag'>Saturated Fat Level</label>
         <input 
-            class="form" 
+            class='form-field-signup'  
             type="text" 
             name="saturatedfat" 
-            placeholder="Saturated fat level"
+            placeholder="High, medium or low"
         >
+        <label class='nametag'>Nutrition Grade</label>
         <input 
-            class="form" 
+            class='form-field-signup' 
             type="text" 
             name="nutrition_grades_tags" 
-            placeholder="Nutrition grade"
+            placeholder="A, B, C, D or E"
         >
-        <button 
-            class="button" 
-            type="submit"
-        >
-            Submit
-        </button>
-        <p>
-            <a 
-                class="button2" 
-                href="/home"
+        <div class="align-buttons">
+            <button 
+                class="button" 
+                type="submit"
             >
-                Go back
-            </a>
-        </p>
+                Submit
+            </button>
+            <p>
+                <a 
+                    class="button2" 
+                    href="/home"
+                >
+                    Go back
+                </a>
+            </p>
+        </div>
     </form>
 </div>

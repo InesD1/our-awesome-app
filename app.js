@@ -93,7 +93,7 @@ hbs.registerHelper('ifCond', function(v1, options) {
 });
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator'
+app.locals.title = 'Foodie - Your food catalog'
 app.use('/', require('./routes/home'))
 app.use('/', require('./routes/products'))
 app.use('/', require('./routes/add-wishlist'))

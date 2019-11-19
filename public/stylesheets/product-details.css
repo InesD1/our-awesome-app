@@ -63,6 +63,10 @@ li {
     font-size: 1.5em;
 }
 
+#add-wishlist:hover{
+    cursor: pointer;
+}
+
 a:link {
     text-decoration: none;
 }
@@ -120,6 +124,18 @@ a:link {
   display: inline-block;
   font-size: 16px;
   margin-left: 5%;
+  box-shadow: 3px 3px 3px 3px #e5e3e3;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #6aa898;
+}
+
+.button:active {
+    background-color: #6aa898;
+    box-shadow: 3px 3px 3px 3px #EBEBEB;
+    transform: translateY(4px);
 }
 
 .button2 {
@@ -133,4 +149,17 @@ a:link {
     display: inline-block;
     font-size: 16px;
     margin-left: 5%;
+    box-shadow: 3px 3px 3px 3px #e5e3e3;
   }
+
+
+.button2:hover{
+    cursor: pointer;
+    background-color: #c4564e;
+}
+
+.button2:active {
+    background-color: #c4564e;
+    box-shadow: 3px 3px 3px 3px #EBEBEB;
+    transform: translateY(4px);
+}

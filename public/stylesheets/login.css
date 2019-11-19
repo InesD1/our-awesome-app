@@ -1,7 +1,7 @@
 html {
-    
     font-family: 'Roboto', sans-serif;
     margin: auto;
+    background-color: #F4F4F4;
 }
 
 .capitalized {
@@ -9,8 +9,6 @@ html {
 } 
 
 .form-container {
-  /* padding: 15px 35px 45px; */
-  /* margin-top: 30px; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -19,7 +17,7 @@ html {
 
 .img-login{
     width: 200px;
-    height: 200px;
+    height: auto;
     position: relative;
     border-radius: 30px;
     border: none; 
@@ -64,8 +62,6 @@ html {
     height: 17vh;
     background-color: #73D3C8;
     padding: 10px;
-    /* padding-right: 50px;
-    padding-left: 200px; */
     border-radius: 5px;
     font-size: 80px;
     font-weight: bold;
@@ -74,22 +70,6 @@ html {
     text-align: center;
     
   }
-
-/* 
-  legend {
-    font-family: 'Amatic SC', cursive;
-    box-sizing: border-box;
-    color: red;;
-    display: table;
-    max-width: 100%;
-    padding: 0;
-    white-space: normal;
-  } */
-
-
-/* input[type="text"]:hover{
-    box-shadow: 3px red;
-} */
 
 input[type="text"] {
       margin-bottom: 30px;
@@ -127,8 +107,7 @@ input[type="password"] {
     text-decoration: none;
 }
 
-
-/* -----  SIGN UP -------------------------------------------- */
+/* -----  SIGN UP ----- */
 
 .form-container-signin,
 .reset-form-container,
@@ -216,7 +195,7 @@ input[type="password"] {
     margin-bottom: 15px;
 }
 
-/* -----  RESET PASSWORD -------------------------------------------- */
+/* -----  RESET PASSWORD ----- */
 
 .password-text,
 .send-text{
@@ -305,30 +284,6 @@ input[type="password"] {
     margin-left: 30px;
   }
 
-  .header-img{
-    background: url("/images/background-food.jpeg");
-    height: 40vh;
-    width: 100vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-/* .title-p{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 50vw;
-  height: 21vh;
-  background-color: #73D3C8;
-  padding: 10px;
-  border-radius: 5px;
-} */
-
 .p-1 {
     background-color: #73D3C8;
     font-size: 65px;
@@ -347,7 +302,6 @@ input[type="password"] {
         justify-content: center;
     -ms-flex-align: center;
         align-items: center;
-    /* background: url("images/background-food.jpeg"); */
     background-size: cover;
     background-position: center center;
     padding: 15px;
@@ -362,7 +316,6 @@ input[type="password"] {
   
   .s013 form fieldset {
     margin-bottom: 50px;
- 
   }
   
   .s013 form fieldset legend {
